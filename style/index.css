@@ -1,3 +1,7 @@
+body{
+	text-align: center;
+}
+
 #table > div {
     display: grid;
     grid-template-columns: 100px 200px 200px 100px 90px 90px 90px;
@@ -5,12 +9,34 @@
 	margin-bottom: 10px;
 }
 
-#table {
+.table {
+	width: auto;
     margin: 0 auto;
-    width: fit-content;
-    border: 1px solid black;
+    text-align: center;
 }
 
 button {
     margin: 3px;
+}
+
+td{
+	border:1px solid black;
+}
+
+td:hover{
+	cursor:pointer;
+}
+
+thead{
+	background-color: lightblue;
+}
+
+.table thead th{
+	border:1px solid black;
+}
+
+.table td, .table th{
+	padding: .75rem;
+    vertical-align: top;
+    border-top:none;
 }
