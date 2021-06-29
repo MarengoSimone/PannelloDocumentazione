@@ -41,3 +41,15 @@ tr th{
 tbody tr:last-of-type{
 	border-bottom:2px solid black;
 }
+
+#insert{
+	margin:30px;
+}
+
+#btnSubmit{
+	margin-left: 20px;
+}
+
+#txtCategoria{
+	width: 8em;
+}

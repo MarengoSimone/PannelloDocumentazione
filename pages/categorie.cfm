@@ -1,5 +1,6 @@
-<cfscript> 
-
+<cfscript>
+	categ = createObject("component", "PannelloDocumentazione\managers\aggiungi_categoria");
+	categ.uploadCategoria(form);
 </cfscript>
 
 <!DOCTYPE html>
@@ -30,6 +31,6 @@
 				  		</cfscript>
 				  </tbody>
 			</table>
-			<a href="ambienti.cfm">  <button class='btn btn-primary'> Aggiungi Categoria</button> </a>
+			<a href="aggiungi_categoria.cfm">  <button class='btn btn-primary'> Aggiungi Categoria</button> </a>
 	</body>
 </html>
