@@ -1,4 +1,5 @@
 <cfscript>
+	manager = createObject('component', "PannelloDocumentazione/managers/ambienti");
 </cfscript>
 <!DOCTYPE html>
 <html>
@@ -12,28 +13,41 @@
 		<!-- SPECIFICI -->
 		<link rel="stylesheet" href="..\style\index.css">
 	</head>
-		<body>
-		
-			<h1 class='text-center' style="margin:20px">Categorie di Ticket disponibili:</h1>
-			<table class="table table-hover" style="margin-top:20px">
-				<thead>
-					<tr>
-						<th>Categoria Ticket</th>
-					</tr>
-				</thead>
-				
-				<tbody>	
-					<tr> 
-						<td> <a>Coop</a></td>
-					</tr>
-					<tr> 
-						<td> <a>Coop</a></td>
-					</tr>
-					<tr> 
-						<td> <a>Coop</a></td>
-					</tr>
-				</tbody>
+	<body>
+		<h1 class='text-center' style="margin:20px">AMBIENTI:</h1>
+			<table class="table table-striped">
+				  <thead>
+				    <tr>
+				      <th scope="col">Ambiente</th>
+				      <th scope="col">Portale</th>
+				      <th scope="col">Administrator</th>
+				      <th scope="col">Utils</th>
+				      <th scope="col">Procedure</th>
+				      <th scope="col">Versione</th>
+				    </tr>
+				    <!---<cfscript>
+				    	manager.scriviHeaderTabella();
+				    </cfscript>--->
+				  </thead>
+				  <tbody>
+
+				  	<cfscript>
+				  		writeOutput(manager.scriviElementiTabella());
+				  	</cfscript>
+
+				   <!--- <tr>
+				      <th scope="row">Coop</th>
+				    </tr>
+				    <tr>
+				      <th scope="row">Conad</th>
+				    </tr>
+				    <tr>
+				      <th scope="row">Lidl</th>
+				    </tr>--->
+				  </tbody>
 			</table>
-			<a href="ambienti.cfm">  <button class='btn btn-primary'> Aggiungi Categoria</button> </a>
+			<a href="ambienti.cfm">  <button class='btn btn-primary'> Aggiungi Ambiente</button> </a>
+			<a href="ambienti.cfm">  <button class='btn btn-danger'> Elimina Ambiente/i</button> </a>
+			<a href="ambienti.cfm">  <button class='btn btn-info'> Modifica Ambiente</button> </a>
 	</body>
 </html>
