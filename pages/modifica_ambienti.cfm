@@ -1,6 +1,9 @@
 <cfscript>
-	manager = createObject('component', "PannelloDocumentazione/managers/ambienti");
-	manager.controlloForm(form);
+	manager = createObject('component', "PannelloDocumentazione/managers/modifica_ambienti");
+
+	if(!isDefined("url.tipo")){
+		cflocation( url="C:\ColdFusion2016\PannelloDocumentazione\wwwroot\PannelloDocumentazione\pages\ambienti.cfm" );
+	}
 </cfscript>
 <!DOCTYPE html>
 <html>
@@ -15,7 +18,8 @@
 		<link rel="stylesheet" href="..\style\index.css">
 	</head>
 	<body>
-		<h1 class='text-center' style="margin:20px">AMBIENTI:</h1>
+		<cfform action="ambienti.cfm" method="post">
+			<h1 class='text-center' style="margin:20px">AMBIENTI:</h1>
 			<table class="table table-striped">
 				  <thead>
 				    <tr>
@@ -25,19 +29,15 @@
 				      <th scope="col">Utils</th>
 				      <th scope="col">Procedure</th>
 				      <th scope="col">Versione</th>
-				      <th scope="col">Modifica</th>
-				      <th scope="col">Elimina</th>
 				    </tr>
 				  </thead>
 				  <tbody>
-
 				  	<cfscript>
-				  		writeOutput(manager.scriviElementiTabella());
+				  		writeOutput(manager.creaContenutoTabella(url.tipo));
 				  	</cfscript>
 				  </tbody>
 			</table>
-			<a href="modifica_ambienti.cfm?tipo=aggiungi">  <button class='btn btn-primary'>Aggiungi Ambiente</button> </a>
-			<a href="modifica_ambienti.cfm?tipo=modifica">  <button class='btn btn-info'>Modifica Ambiente</button> </a>
-			<a href="modifica_ambienti.cfm?tipo=elimina">  <button class='btn btn-danger'>Elimina Ambiente/i</button> </a>
+			<input type="submit" name="btnAggiungiAmbiente" class='btn btn-primary' value="Aggiungi Ambiente">
+		</cfform>
 	</body>
 </html>

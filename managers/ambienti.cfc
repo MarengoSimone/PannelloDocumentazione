@@ -2,49 +2,33 @@
 	<cfscript>
 	managerDB = createObject('component', "PannelloDocumentazione/managersDB/DB_ambienti");
 
-		public void function scriviHeaderTabella(){
-			allAmbienti = managerDB.getAllAmbienti();
-			ambientiColumns = allAmbienti.columnArray();
-			writeOutput("<tr>");
-			for(i = 1; i <= ambientiColumns.len(); i++){
-				writeOutput("<th scope='col'>#ambientiColumns[i]#</th>");
-			}
-			writeOutput("</tr>");
-		}
-
 		public string function scriviElementiTabella(){
 			allAmbienti = managerDB.getAllAmbienti();
-			local.riga = "";
+			local.contenuto = "";
 			//writeDump(allAmbienti);
 
 			for(local.idx = 1; local.idx <= allAmbienti.recordCount; local.idx++){
 				linkPortale = "<a href='#allAmbienti.portale[local.idx]#'>go</a>";
-				//if(#allAmbienti.administrator[i]# != ""){
+				if(#allAmbienti.administrator[local.idx]# != ""){
 					linkAdministrator = "<a href='#allAmbienti.administrator[local.idx]#'>go</a>";
-				//}else{
-				//	linkAdministrator = "/";
-				//}
+				}else{
+					linkAdministrator = "/";
+				}
 
-				//if(#allAmbienti.utils[i]# != ""){
+				if(#allAmbienti.utils[local.idx]# != ""){
 					linksUtils = linkUtils(local.idx, allAmbienti);
-				//}else{
-				//	linkUtils = "/";
-				//}
-				//writeDump(linkUtils(i, allAmbienti));
-
-				//if(#allAmbienti.proced[i]# != ""){
+				}else{
+					linksUtils = "/";
+				}
+				if(#allAmbienti.proced[local.idx]# != ""){
 					linksProcedure = linkProcedure(local.idx, allAmbienti);
-				//}else{
-				//	linkProcedure = "/";
-				//}
-				//writeDump(linkProcedure(i, allAmbienti));
-				local.riga &= "<tr><td scope = 'row'>#allAmbienti.ambiente[local.idx]#</td><td scope = 'row'>#linkPortale#</td><td scope = 'row'>#linkAdministrator#</td><td scope = 'row'>#linksUtils#</td><td scope = 'row'>#linksProcedure#</td><td scope = 'row'>#allAmbienti.versione[local.idx]#</td></tr>";
-				//local.riga = local.idx;
-				//writeDump(local.riga);
-
+				}else{
+					linksProcedure = "/";
+				}
+				local.contenuto &= "<tr><td scope = 'row'>#allAmbienti.ambiente[local.idx]#</td><td scope = 'row'>#linkPortale#</td><td scope = 'row'>#linkAdministrator#</td><td scope = 'row'>#linksUtils#</td><td scope = 'row'>#linksProcedure#</td><td scope = 'row'>#allAmbienti.versione[local.idx]#</td><td scope = 'row'><input type='radio' name='radioModifica'></td><td scope = 'row'><input type='radio' name='radioElimina'></td></tr>";
 			}
 
-			return local.riga;
+			return local.contenuto;
 		}
 
 		public string function linkUtils(indice, allAmbienti){
@@ -65,6 +49,12 @@
 				linkFine &= "<a href='localhost:8500/#links[i]#'>#nome[3]#</a><br>";
 			}
 			return linkFine;
+		}
+
+		public void function controlloForm(form){
+			if(isDefined("form") && isDefined("form.btnAggiungiAmbiente") && form.btnAggiungiAmbiente == "Aggiungi Ambiente"){
+				managerDB.aggiungiFormDB(form);
+			}
 		}
 	</cfscript>
 </cfcomponent>
