@@ -13,24 +13,23 @@
 	<body>
 		
 			<h1 class='text-center' style="margin:20px">Categorie di Ticket disponibili:</h1>
-			<table class="table table-hover" style="margin-top:20px">
-				<thead>
-					<tr>
-						<th>Categoria Ticket</th>
-					</tr>
-				</thead>
-				
-				<tbody>	
-					<tr> 
-						<td> <a>Coop</a></td>
-					</tr>
-					<tr> 
-						<td> <a>Coop</a></td>
-					</tr>
-					<tr> 
-						<td> <a>Coop</a></td>
-					</tr>
-				</tbody>
+			<table class="table table-striped">
+				  <thead>
+				    <tr>
+				      <th scope="col">Categoria</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <th scope="row">Coop</th>
+				    </tr>
+				    <tr>
+				      <th scope="row">Conad</th>
+				    </tr>
+				    <tr>
+				      <th scope="row">Lidl</th>
+				    </tr>
+				  </tbody>
 			</table>
 			<a href="ambienti.cfm">  <button class='btn btn-primary'> Aggiungi Categoria</button> </a>
 	</body>

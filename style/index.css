@@ -15,28 +15,20 @@ body{
     text-align: center;
 }
 
-button {
-    margin: 3px;
-}
-
-td{
-	border:1px solid black;
-}
-
 td:hover{
 	cursor:pointer;
 }
 
 thead{
 	background-color: lightblue;
+	border:2px solid black;
 }
 
 .table thead th{
+	border-bottom: none;
 	border:1px solid black;
 }
 
-.table td, .table th{
-	padding: .75rem;
-    vertical-align: top;
-    border-top:none;
+button{
+	margin:15px;
 }
