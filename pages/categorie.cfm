@@ -1,3 +1,7 @@
+<cfscript> 
+
+</cfscript>
+
 <!DOCTYPE html>
 <html>
 	<head lang="it">
@@ -20,15 +24,10 @@
 				    </tr>
 				  </thead>
 				  <tbody>
-				    <tr>
-				      <th scope="row">Coop</th>
-				    </tr>
-				    <tr>
-				      <th scope="row">Conad</th>
-				    </tr>
-				    <tr>
-				      <th scope="row">Lidl</th>
-				    </tr>
+				  		<cfscript>
+				  			manager = createObject("component","PannelloDocumentazione\managers\categorie");
+				  			writeOutput(manager.creaRighe());
+				  		</cfscript>
 				  </tbody>
 			</table>
 			<a href="ambienti.cfm">  <button class='btn btn-primary'> Aggiungi Categoria</button> </a>
