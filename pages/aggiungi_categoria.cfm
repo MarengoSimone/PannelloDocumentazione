@@ -1,6 +1,5 @@
 <cfscript> 
-	/*categ = createObject("component", "PannelloDocumentazione\managers\aggiungi_categoria");
-	categ.uploadCategoria(form);*/
+
 </cfscript>
 
 <!DOCTYPE html>

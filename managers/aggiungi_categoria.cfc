@@ -18,8 +18,7 @@
 				}
 				else
 				{
-					writeOutput("Categoria gia' presente sul DB!");
-					
+					//writeOutput("Categoria gia' presente sul DB!");
 				}
 			}
 		}		

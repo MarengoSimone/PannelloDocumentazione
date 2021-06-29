@@ -6,7 +6,7 @@
 			app = " ";
 			for(i=1;i<=categorie.recordCount;i++)
 			{	
-				app &= "<tr> <th scope='row'> <a href='ambienti.cfm'> #categorie.nomeCategoria[i]# </a> </th> </tr>";
+				app &= "<tr> <th scope='row'> <a href='tickets.cfm?categoria=#categorie.nomeCategoria[i]#'> #categorie.nomeCategoria[i]# </a> </th> </tr>";
 			}
 			return app;
 		}
