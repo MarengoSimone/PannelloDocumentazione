@@ -16,9 +16,9 @@
 			);
 		}
 
-		public any function updateTicket(form,categoria){
+		public any function updateTicket(form,nome){
 			return QueryExecute(
-			"update Tickets set descrizione='#form.txtDescrizione#',problemi='#form.txtProblemi#', test= '#form.txtTest#', installazione = '#form.txtInstallazione#' where categoria='#categoria#' and nomeTicket='#form.txtNome.value#' ",
+			"update Tickets set descrizione='#form.txtDescrizione#',problemi='#form.txtProblemi#', test= '#form.txtTest#', installazione = '#form.txtInstallazione#' where categoria='#categoria#' and nomeTicket='#nome#' ",
 			{},
 			{datasource = "qa_tirocinioDev"}
 			);
