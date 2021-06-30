@@ -17,7 +17,7 @@
 				app = " ";
 				for(i=1;i<=tickets.recordCount;i++)
 				{	
-					app &= "<tr> <td>#tickets.nomeTicket[i]#</td> <td>#tickets.descrizione[i]#</td> <td>#tickets.problemi[i]#</td> <td>#tickets.test[i]#</td> <td>#tickets.installazione[i]#</td> </tr>";
+					app &= "<tr> <input class='categoria' type='hidden'value='#categoria#'> </input> <td>#tickets.nomeTicket[i]#</td> <td>#tickets.descrizione[i]#</td> <td>#tickets.problemi[i]#</td> <td>#tickets.test[i]#</td> <td>#tickets.installazione[i]#</td> <td><input type='radio' name='rdbModifica' value='#tickets.nomeTicket[i]#'></td> <td><input type='radio' name='rdbElimina' value='#tickets.nomeTicket[i]#'></td> </tr>";
 				}
 				return app;
 			}
@@ -30,9 +30,7 @@
 
 		public any function generaPulsanti(categoria){
 			return "<a href='categorie.cfm'>  <button class='btn btn-warning'> Indietro</button> </a>
-				<a href='gestione_ticket.cfm?mode=Aggiungi&categoria=#categoria#'>  <button class='btn btn-primary'> Aggiungi Ticket</button> </a>
-				<a href='gestione_ticket.cfm?mode=Aggiorna&categoria=#categoria#'>  <button class='btn btn-info'> Aggiorna Ticket</button> </a>
-				<a>  <button class='btn btn-danger'> Elimina Ticket</button> </a>";
+				<a href='gestione_ticket.cfm?mode=Aggiungi&categoria=#categoria#&nome='no''>  <button class='btn btn-primary'> Aggiungi Ticket</button> </a>";
 		}
 	</cfscript>
 </cfcomponent>

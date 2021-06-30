@@ -7,5 +7,29 @@
 			{datasource = "qa_tirocinioDev"}
 			);
 		}
+
+		public any function getTicket(nome){
+			return QueryExecute(
+			"select * from Tickets where nomeTicket='#nome#'",
+			{},
+			{datasource = "qa_tirocinioDev"}
+			);
+		}
+
+		public any function updateTicket(form,categoria){
+			return QueryExecute(
+			"update Tickets set descrizione='#form.txtDescrizione#',problemi='#form.txtProblemi#', test= '#form.txtTest#', installazione = '#form.txtInstallazione#' where categoria='#categoria#' and nomeTicket='#form.txtNome.value#' ",
+			{},
+			{datasource = "qa_tirocinioDev"}
+			);
+		}
+
+		public any function deleteTicket(form,nome){
+			QueryExecute(
+			"delete from Tickets where nomeTicket='#nome#'",
+			{},
+			{datasource = "qa_tirocinioDev"}
+			);
+		}
 	</cfscript>
 </cfcomponent>

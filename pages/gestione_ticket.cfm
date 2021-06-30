@@ -1,15 +1,22 @@
 <cfscript>
 	gestioneTicket = createObject("component", "PannelloDocumentazione\managers\gestione_ticket");
-	if(#url.mode# != "Aggiorna" && #url.mode# != "Aggiungi")
+	if(#url.mode# != "Aggiorna" && #url.mode# != "Aggiungi" && #url.mode# != "Elimina")
 	{
 		cflocation( url="categorie.cfm" );
 	}
 
-		if(isDefined("form") && isDefined("form.BTNSUBMIT") && (#form.BTNSUBMIT# == "Aggiungi Ticket"))
+	if(isDefined("form") && isDefined("form.BTNSUBMIT") && (#form.BTNSUBMIT# == "Aggiungi Ticket"))
 	{
-		writeDump("var");
-		abort;
 		gestioneTicket.uploadTicket(form,url.categoria);
+	}
+	else if (isDefined("form") && isDefined("form.BTNSUBMIT") && (#form.BTNSUBMIT# == "Aggiorna Ticket"))
+	{
+		gestioneTicket.updateTicket(form,url.categoria);
+	}
+	else if (isDefined("form") && isDefined("form.BTNSUBMIT") && (#form.BTNSUBMIT# == "Elimina Ticket"))
+	{
+		writeOutput(url.nome);
+		gestioneTicket.deleteTicket(form,url.nome);
 	}
 </cfscript>
 
@@ -28,7 +35,7 @@
 	<body>
 		
 			<h1 class='text-center' style="margin:20px"> <cfoutput> #url.mode# Ticket: </cfoutput> </h1>
-			<cfform  action='tickets.cfm?categoria=#url.categoria#' method='post'>
+			<cfform  action='tickets.cfm?categoria=#url.categoria#&nome=#url.nome#' method='post'>
 			<table class="table table-striped">
 				  <thead>
 				    <tr>
@@ -41,7 +48,12 @@
 				  </thead>
 				  <tbody>
 				  		<cfscript>
-							writeOutput(gestioneTicket.caricaTabella(#url.mode#));
+						if(#url.nome# == "undefined")
+						{
+							writeOutput(gestioneTicket.caricaTabella(#url.mode#,"test"));
+						}
+						else
+							writeOutput(gestioneTicket.caricaTabella(#url.mode#,#url.nome#));
 				  		</cfscript>
 				  </tbody>
 			</table>
