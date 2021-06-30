@@ -66,7 +66,7 @@
 		public void function controlloForm(form){
 			if(isDefined("form") && isDefined("form.btnAggiungiAmbiente") && form.btnAggiungiAmbiente == "Aggiungi Ambiente"){
 				managerDB.aggiungiFormDB(form);
-			}else if(isDefined("form") && isDefined("form.btnModificaAmbiente") && form.btnModificaAmbiente == "Update Ambiente"){
+			}else if(isDefined("form") && isDefined("form.btnModificaAmbiente") && form.btnModificaAmbiente == "Aggiorna Ambiente"){
 				managerDB.modificaFormDB(form);
 			}else if(isDefined("form") && isDefined("form.btnEliminaAmbiente") && form.btnEliminaAmbiente == "Elimina Ambiente"){
 				managerDB.eliminaFormDB(form);

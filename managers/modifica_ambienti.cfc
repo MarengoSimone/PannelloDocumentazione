@@ -54,7 +54,7 @@
 						<input type='submit' name='btnAggiungiAmbiente' class='btn btn-primary' value='Aggiungi Ambiente'>";
 			}else if(tipo == "modifica"){
 				return "<a href='ambienti.cfm'><input type='button' value='Indietro' class='btn btn-warning'>
-						<input type='submit' name='btnModificaAmbiente' class='btn btn-info' value='Update Ambiente'>";
+						<input type='submit' name='btnModificaAmbiente' class='btn btn-info' value='Aggiorna Ambiente'>";
 			}else{
 				return "<a href='ambienti.cfm'><input type='button' value='Indietro' class='btn btn-warning'>
 						<input type='submit' name='btnEliminaAmbiente' class='btn btn-danger' value='Elimina Ambiente'>";
