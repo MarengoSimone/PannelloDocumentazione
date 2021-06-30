@@ -4,11 +4,16 @@
 
 		public string function scriviElementiTabella(){
 			allAmbienti = managerDB.getAllAmbienti();
-			local.contenuto = "";
+			local.contenuto = "<tbody>";
 			//writeDump(allAmbienti);
 
 			for(local.idx = 1; local.idx <= allAmbienti.recordCount; local.idx++){
-				linkPortale = "<a href='#allAmbienti.portale[local.idx]#'>go</a>";
+				if(#allAmbienti.portale[local.idx]# != ""){
+					linkPortale = "<a href='#allAmbienti.portale[local.idx]#'>go</a>";
+				}else{
+					linkPortale = "/";
+				}
+
 				if(#allAmbienti.administrator[local.idx]# != ""){
 					linkAdministrator = "<a href='#allAmbienti.administrator[local.idx]#'>go</a>";
 				}else{
@@ -20,14 +25,21 @@
 				}else{
 					linksUtils = "/";
 				}
+
 				if(#allAmbienti.proced[local.idx]# != ""){
 					linksProcedure = linkProcedure(local.idx, allAmbienti);
 				}else{
 					linksProcedure = "/";
 				}
-				local.contenuto &= "<tr><td scope = 'row'>#allAmbienti.ambiente[local.idx]#</td><td scope = 'row'>#linkPortale#</td><td scope = 'row'>#linkAdministrator#</td><td scope = 'row'>#linksUtils#</td><td scope = 'row'>#linksProcedure#</td><td scope = 'row'>#allAmbienti.versione[local.idx]#</td><td scope = 'row'><input type='radio' name='radioModifica'></td><td scope = 'row'><input type='radio' name='radioElimina'></td></tr>";
-			}
 
+				if(#allAmbienti.versione[local.idx]# != ""){
+					versione = "#allAmbienti.versione#";
+				}else{
+					versione = "/";
+				}
+				local.contenuto &= "<tr><td scope = 'row'>#allAmbienti.ambiente[local.idx]#</td><td scope = 'row'>#linkPortale#</td><td scope = 'row'>#linkAdministrator#</td><td scope = 'row'>#linksUtils#</td><td scope = 'row'>#linksProcedure#</td><td scope = 'row'>#versione#</td><td scope = 'row'><input type='radio' name='radioModifica' value='#allAmbienti.ambiente[local.idx]#'></td><td scope = 'row'><input type='radio' name='radioElimina' value='#allAmbienti.ambiente[local.idx]#'></td></tr>";
+			}
+			local.contenuto &= "</tbody>";
 			return local.contenuto;
 		}
 
@@ -54,7 +66,15 @@
 		public void function controlloForm(form){
 			if(isDefined("form") && isDefined("form.btnAggiungiAmbiente") && form.btnAggiungiAmbiente == "Aggiungi Ambiente"){
 				managerDB.aggiungiFormDB(form);
+			}else if(isDefined("form") && isDefined("form.btnModificaAmbiente") && form.btnModificaAmbiente == "Update Ambiente"){
+				managerDB.modificaFormDB(form);
+			}else if(isDefined("form") && isDefined("form.btnEliminaAmbiente") && form.btnEliminaAmbiente == "Elimina Ambiente"){
+				managerDB.eliminaFormDB(form);
 			}
+		}
+
+		public string function bottoneModifica(ambienteModifica){
+			return "<a href='modifica_ambienti.cfm?tipo=modifica&ambienteModifica=#ambienteModifica#'>  <button class='btn btn-primary'>Modifica Ambiente</button> </a>";
 		}
 	</cfscript>
 </cfcomponent>

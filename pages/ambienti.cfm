@@ -1,6 +1,8 @@
 <cfscript>
 	manager = createObject('component', "PannelloDocumentazione/managers/ambienti");
 	manager.controlloForm(form);
+
+	local.ambModifica = "niente";
 </cfscript>
 <!DOCTYPE html>
 <html>
@@ -13,31 +15,29 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 		<!-- SPECIFICI -->
 		<link rel="stylesheet" href="..\style\index.css">
+		<script type="text/javascript" src="..\script\ambienti.js"></script>
 	</head>
 	<body>
 		<h1 class='text-center' style="margin:20px">AMBIENTI:</h1>
-			<table class="table table-striped">
-				  <thead>
-				    <tr>
-				      <th scope="col">Ambiente</th>
-				      <th scope="col">Portale</th>
-				      <th scope="col">Administrator</th>
-				      <th scope="col">Utils</th>
-				      <th scope="col">Procedure</th>
-				      <th scope="col">Versione</th>
-				      <th scope="col">Modifica</th>
-				      <th scope="col">Elimina</th>
-				    </tr>
-				  </thead>
-				  <tbody>
-
-				  	<cfscript>
-				  		writeOutput(manager.scriviElementiTabella());
-				  	</cfscript>
-				  </tbody>
-			</table>
+		<table class="table table-striped">
+			  <thead>
+			    <tr>
+			      <th scope="col">Ambiente</th>
+			      <th scope="col">Portale</th>
+			      <th scope="col">Administrator</th>
+			      <th scope="col">Utils</th>
+			      <th scope="col">Procedure</th>
+			      <th scope="col">Versione</th>
+			      <th scope="col">Modifica</th>
+			      <th scope="col">Elimina</th>
+			    </tr>
+			  </thead>
+			  <cfscript>
+			  	  writeOutput(manager.scriviElementiTabella());
+			  </cfscript>
+		</table>
+		<div  id="ambienteModifica">
 			<a href="modifica_ambienti.cfm?tipo=aggiungi">  <button class='btn btn-primary'>Aggiungi Ambiente</button> </a>
-			<a href="modifica_ambienti.cfm?tipo=modifica">  <button class='btn btn-info'>Modifica Ambiente</button> </a>
-			<a href="modifica_ambienti.cfm?tipo=elimina">  <button class='btn btn-danger'>Elimina Ambiente/i</button> </a>
+		</div>
 	</body>
 </html>

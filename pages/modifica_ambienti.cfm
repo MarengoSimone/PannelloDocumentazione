@@ -2,7 +2,11 @@
 	manager = createObject('component', "PannelloDocumentazione/managers/modifica_ambienti");
 
 	if(!isDefined("url.tipo")){
-		cflocation( url="C:\ColdFusion2016\PannelloDocumentazione\wwwroot\PannelloDocumentazione\pages\ambienti.cfm" );
+		cflocation( url="ambienti.cfm" );
+	}
+
+	if(!isDefined("url.ambiente")){
+		url.ambiente = "niente";
 	}
 </cfscript>
 <!DOCTYPE html>
@@ -31,13 +35,13 @@
 				      <th scope="col">Versione</th>
 				    </tr>
 				  </thead>
-				  <tbody>
-				  	<cfscript>
-				  		writeOutput(manager.creaContenutoTabella(url.tipo));
-				  	</cfscript>
-				  </tbody>
+				  <cfscript>
+				  	writeOutput(manager.creaContenutoTabella(url.tipo, url.ambiente));
+				  </cfscript>
 			</table>
-			<input type="submit" name="btnAggiungiAmbiente" class='btn btn-primary' value="Aggiungi Ambiente">
+			<cfscript>
+				writeOutput(manager.creaBottoni(url.tipo));
+			</cfscript>
 		</cfform>
 	</body>
 </html>
