@@ -27,5 +27,12 @@
 				cflocation( url="categorie.cfm");
 			}
 		}
+
+		public any function generaPulsanti(categoria){
+			return "<a href='categorie.cfm'>  <button class='btn btn-warning'> Indietro</button> </a>
+				<a href='gestione_ticket.cfm?mode=Aggiungi&categoria=#categoria#'>  <button class='btn btn-primary'> Aggiungi Ticket</button> </a>
+				<a href='gestione_ticket.cfm?mode=Aggiorna&categoria=#categoria#'>  <button class='btn btn-info'> Aggiorna Ticket</button> </a>
+				<a>  <button class='btn btn-danger'> Elimina Ticket</button> </a>";
+		}
 	</cfscript>
 </cfcomponent>

@@ -53,3 +53,11 @@ tbody tr:last-of-type{
 #txtCategoria{
 	width: 8em;
 }
+
+.btn-warning{
+	color:white;
+}
+
+.btn:hover{
+	cursor: pointer;
+}

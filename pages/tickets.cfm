@@ -1,5 +1,11 @@
 <cfscript>
 	ticket = createObject("component", "PannelloDocumentazione\managers\tickets");
+	gestioneTicket = createObject("component", "PannelloDocumentazione\managers\gestione_ticket");
+
+	if(isDefined("form") && isDefined("form.BTNSUBMIT") && (#form.BTNSUBMIT# == "Aggiungi Ticket"))
+	{
+		gestioneTicket.uploadTicket(form,url.categoria);
+	}
 </cfscript>
 
 <!DOCTYPE html>
@@ -25,6 +31,8 @@
 				      <th scope="col">Problemi</th>
 				      <th scope="col">Test</th>
 				      <th scope="col">Installazione</th>
+				      <th scope="col">Modifica</th>
+				      <th scope="col">Elimina</th>
 				    </tr>
 				  </thead>
 				  <tbody>
@@ -33,9 +41,9 @@
 				  		</cfscript>
 				  </tbody>
 			</table>
-			<a href="categorie.cfm" style='color: white;'>  <button class='btn btn-warning'> Indietro</button> </a>
-			<a href="gestione_ticket.cfm?mode=Aggiungi">  <button class='btn btn-primary'> Aggiungi Ticket</button> </a>
-			<a href="gestione_ticket.cfm?mode=Aggiorna">  <button class='btn btn-info'> Aggiorna Ticket</button> </a>
-			<a>  <button class='btn btn-danger'> Elimina Ticket</button> </a>
+
+			<cfscript>
+			writeOutput(ticket.generaPulsanti(#url.categoria#));
+			</cfscript>
 	</body>
 </html>

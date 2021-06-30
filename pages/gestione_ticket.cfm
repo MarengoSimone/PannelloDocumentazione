@@ -4,6 +4,13 @@
 	{
 		cflocation( url="categorie.cfm" );
 	}
+
+		if(isDefined("form") && isDefined("form.BTNSUBMIT") && (#form.BTNSUBMIT# == "Aggiungi Ticket"))
+	{
+		writeDump("var");
+		abort;
+		gestioneTicket.uploadTicket(form,url.categoria);
+	}
 </cfscript>
 
 <!DOCTYPE html>
@@ -21,6 +28,7 @@
 	<body>
 		
 			<h1 class='text-center' style="margin:20px"> <cfoutput> #url.mode# Ticket: </cfoutput> </h1>
+			<cfform  action='tickets.cfm?categoria=#url.categoria#' method='post'>
 			<table class="table table-striped">
 				  <thead>
 				    <tr>
@@ -33,10 +41,11 @@
 				  </thead>
 				  <tbody>
 				  		<cfscript>
-				  			
+							writeOutput(gestioneTicket.caricaTabella(#url.mode#));
 				  		</cfscript>
 				  </tbody>
 			</table>
-			<a href="gestione_ticket.cfm?mode=aggiungi">  <button class='btn btn-primary'> <cfoutput> #url.mode# Ticket </cfoutput> </button> </a>
+				<input class='btn btn-primary' type='submit' name='btnSubmit' value='<cfoutput>#url.mode# Ticket</cfoutput>' style='margin:10px;'> </input>
+			</cfform>
 	</body>
 </html>
