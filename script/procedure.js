@@ -3,7 +3,7 @@
 window.onload = function(){
 	let _radioModifica = document.getElementsByName("radioModifica")
 	let _radioElimina = document.getElementsByName("radioElimina")
-	let _ambienteModifica = document.getElementById("ambienteModifica")
+	let _bottoni = document.getElementById("bottoni")
 
 	for(let i = 0; i < _radioModifica.length; i++){
 		_radioModifica[i].addEventListener("click", bottoniModifica);
@@ -14,8 +14,8 @@ window.onload = function(){
 	}
 
 	function bottoniModifica(){
-		_ambienteModifica.innerHTML = `<a href="modifica_ambienti.cfm?tipo=aggiungi">  <button class='btn btn-primary'>Aggiungi Ambiente</button> </a>
-		<a href='modifica_ambienti.cfm?tipo=modifica&ambiente=${this.value}'>  <button class='btn btn-info'>Aggiorna Ambiente</button> </a>`
+		_bottoni.innerHTML = `<a href="modifica_procedure.cfm?tipo=aggiungi">  <button class='btn btn-primary'>Aggiungi Procedura</button> </a>
+		<a href='modifica_procedure.cfm?tipo=modifica&procedureid=${this.value}'>  <button class='btn btn-info'>Aggiorna Procedura</button> </a>`
 
 		for(let i = 0; i < _radioElimina.length; i++){
 			if(_radioElimina[i].checked){
@@ -25,8 +25,8 @@ window.onload = function(){
 	}
 
 	function bottoniElimina(){
-		_ambienteModifica.innerHTML = `<a href="modifica_ambienti.cfm?tipo=aggiungi">  <button class='btn btn-primary'>Aggiungi Ambiente</button> </a>
-		<a href='modifica_ambienti.cfm?tipo=elimina&ambiente=${this.value}'>  <button class='btn btn-danger'>Elimina Ambiente</button> </a>`
+		_bottoni.innerHTML = `<a href="modifica_procedure.cfm?tipo=aggiungi">  <button class='btn btn-primary'>Aggiungi Procedura</button> </a>
+		<a href='modifica_procedure.cfm?tipo=elimina&procedureid=${this.value}'>  <button class='btn btn-danger'>Elimina Procedura</button> </a>`
 
 		for(let i = 0; i < _radioModifica.length; i++){
 			if(_radioModifica[i].checked){
