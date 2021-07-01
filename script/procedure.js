@@ -16,10 +16,22 @@ window.onload = function(){
 	function bottoniModifica(){
 		_bottoni.innerHTML = `<a href="modifica_procedure.cfm?tipo=aggiungi">  <button class='btn btn-primary'>Aggiungi Procedura</button> </a>
 		<a href='modifica_procedure.cfm?tipo=modifica&procedureid=${this.value}'>  <button class='btn btn-info'>Aggiorna Procedura</button> </a>`
+
+		for(let i = 0; i < _radioElimina.length; i++){
+			if(_radioElimina[i].checked){
+				_radioElimina[i].checked = false;
+			}
+		}
 	}
 
 	function bottoniElimina(){
 		_bottoni.innerHTML = `<a href="modifica_procedure.cfm?tipo=aggiungi">  <button class='btn btn-primary'>Aggiungi Procedura</button> </a>
 		<a href='modifica_procedure.cfm?tipo=elimina&procedureid=${this.value}'>  <button class='btn btn-danger'>Elimina Procedura</button> </a>`
+
+		for(let i = 0; i < _radioModifica.length; i++){
+			if(_radioModifica[i].checked){
+				_radioModifica[i].checked = false;
+			}
+		}
 	}
 }

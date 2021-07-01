@@ -5,7 +5,19 @@
 			allProcedure = managerDB.getAllProcedure();
 			local.righeTabella = "<tbody>";
 			for(local.i = 1; local.i <= allProcedure.recordCount; local.i++){
-				local.righeTabella &= "<tr><td scope='row'>#allProcedure.nomeProcedura[local.i]#</td><td scope='row'>#allProcedure.descrizione[local.i]#</td><td scope='row'>#allProcedure.note[local.i]#</td><td scope = 'row'><input type='radio' name='radioModifica' value='#allProcedure.procedureID[local.i]#'></td><td scope = 'row'><input type='radio' name='radioElimina' value='#allProcedure.procedureID[local.i]#'></td></tr>";
+				if(allProcedure.descrizione[local.i] != ""){
+					local.descrizione = allProcedure.descrizione[local.i];
+				}else{
+					local.descrizione = "/";
+				}
+
+				if(allProcedure.note[local.i] != ""){
+					local.note = allProcedure.note[local.i];
+				}else{
+					local.note = "/";
+				}
+
+				local.righeTabella &= "<tr><td scope='row'>#allProcedure.nomeProcedura[local.i]#</td><td scope='row'><textarea name='txtDescrizione' rows='5' cols='60' style='resize: none;' readonly disabled>#local.descrizione#</textarea></td><td scope='row'><textarea name='txtDescrizione' rows='5' cols='60' style='resize: none;' readonly disabled>#local.note#</textarea></td><td scope = 'row'><input type='radio' name='radioModifica' value='#allProcedure.procedureID[local.i]#'></td><td scope = 'row'><input type='radio' name='radioElimina' value='#allProcedure.procedureID[local.i]#'></td></tr>";
 			}
 			local.righeTabella &= "</tbody>";
 

@@ -18,7 +18,9 @@ window.onload = function(){
 		<a href='modifica_ambienti.cfm?tipo=modifica&ambiente=${this.value}'>  <button class='btn btn-info'>Aggiorna Ambiente</button> </a>`
 
 		for(let i = 0; i < _radioElimina.length; i++){
-			_radioElimina[i].checked = false;
+			if(_radioElimina[i].checked){
+				_radioElimina[i].checked = false;
+			}
 		}
 	}
 
@@ -27,7 +29,9 @@ window.onload = function(){
 		<a href='modifica_ambienti.cfm?tipo=elimina&ambiente=${this.value}'>  <button class='btn btn-danger'>Elimina Ambiente</button> </a>`
 
 		for(let i = 0; i < _radioModifica.length; i++){
-			_radioModifica[i].checked = false;
+			if(_radioModifica[i].checked){
+				_radioModifica[i].checked = false;
+			}
 		}
 	}
 }
