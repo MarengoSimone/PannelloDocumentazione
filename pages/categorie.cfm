@@ -1,40 +1,36 @@
+<cfscript>
+	categ = createObject("component", "PannelloDocumentazione\managers\aggiungi_categoria");
+	categ.uploadCategoria(form);
+</cfscript>
+
 <!DOCTYPE html>
 <html>
 	<head lang="it">
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Dischi</title>
-		<!-- BOOTSTRAP e JQUERY -->
+		<title>Categorie Ticket</title>
+		<!-- BOOTSTRAP -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
-		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 		<!-- SPECIFICI -->
-		<link rel="stylesheet" href="index.css">
-		<script src="libreria.js"></script>
-		<script src="index.js"></script>
+		<link rel="stylesheet" href="..\style\index.css">
 	</head>
 	<body>
 		
-			<h1 class='text-center' style="margin:20px">Vendita dischi</h1>
-			<div id="table">
-				<div class='table-info text-center' style="padding:15px">
-					<div><b>Codice</b></div>
-					<div><b>Autore</b></div>
-					<div><b>Titolo</b></div>
-					<div><b>Anno</b></div>
-					<div><b>Salva</b></div>
-					<div><b>Annulla</b></div>
-					<div><b>Elimina</b></div>
-				</div>
-			</div>
-			 
-			<br>
-			<center>
-				<button type='button'
-						class='btn btn-primary'
-						onclick='window.location.href="inserisci.html"'>Aggiungi</button>
-			</center>
-		</div>
+			<h1 class='text-center' style="margin:20px">Categorie di Ticket disponibili:</h1>
+			<table class="table table-striped">
+				  <thead>
+				    <tr>
+				      <th scope="col">Categoria</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				  		<cfscript>
+				  			manager = createObject("component","PannelloDocumentazione\managers\categorie");
+				  			writeOutput(manager.creaRighe());
+				  		</cfscript>
+				  </tbody>
+			</table>
+			<a href="aggiungi_categoria.cfm">  <button class='btn btn-primary'> Aggiungi Categoria</button> </a>
 	</body>
 </html>
