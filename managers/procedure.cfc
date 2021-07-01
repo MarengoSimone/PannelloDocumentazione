@@ -17,6 +17,8 @@
 				managerDB.aggiungiFormDB(form);
 			}else if(isDefined("form") && isDefined("form.btnModificaProcedura") && form.btnModificaProcedura == "Aggiorna Procedura"){
 				managerDB.modificaFormDB(form);
+			}else if(isDefined("form") && isDefined("form.btnEliminaProcedura") && form.btnEliminaProcedura == "Elimina Procedura"){
+				managerDB.eliminaFormDB(form);
 			}
 		}
 	</cfscript>

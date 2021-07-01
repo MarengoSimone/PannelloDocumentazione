@@ -7,7 +7,7 @@
 			}else if(tipo == "modifica"){
 				return tabellaModifica(procedureID);
 			}else{
-
+				return tabellaElimina(procedureID);
 			}
 		}
 
@@ -29,14 +29,13 @@
 					</tbody>";
 		}
 
-		public string function tabellaElimina(pagid){
-			allPaginePagID = managerDB.getAllPaginePagID(pagid);
+		public string function tabellaElimina(procedureID){
+			allProcedureProcedureID = managerDB.getAllProcedureProcedureID(procedureID);
 			return "<tbody>
-					<td scope='row'><input type='text' name='txtNomePagina' value='#allPaginePagID.nomePagina#' readonly></td>
-					<td scope='row'><input type='text' name='txtLocazione' value='#allPaginePagID.loc#' readonly></td>
-					<td scope='row'><input type='text' name='txtFunzioni' value='#allPaginePagID.funzioni#' readonly></td>
-					<td scope='row'><input type='text' name='txtTabelle' value='#allPaginePagID.tabelle#' readonly></td>
-					<input type='hidden' name='txtPagID' value='#allPaginePagID.pagID#'>
+					<td scope='row'><input type='text' name='txtNomeProcedura' value='#allProcedureProcedureID.nomeProcedura#' readonly></td>
+					<td scope='row'><input type='text' name='txtDescrizione' value='#allProcedureProcedureID.descrizione#' readonly></td>
+					<td scope='row'><input type='text' name='txtNote' value='#allProcedureProcedureID.note#' readonly></td>
+					<input type='hidden' name='txtProcedureID' value='#allProcedureProcedureID.procedureID#'>
 					</tbody>
 					<h2>SICURO DI VOLER ELIMINARE?</h2>";	
 		}
@@ -49,7 +48,8 @@
 				return "<a href='procedure.cfm'><input type='button' class='btn btn-warning' value='Indietro'></a>
 						<input type = 'submit' class='btn btn-info' name='btnModificaProcedura' value='Aggiorna Procedura'>";
 			}else{
-
+				return "<a href='procedure.cfm'><input type='button' class='btn btn-warning' value='Indietro'></a>
+						<input type = 'submit' class='btn btn-danger' name='btnEliminaProcedura' value='Elimina Procedura'>";
 			}
 		}
 	</cfscript>

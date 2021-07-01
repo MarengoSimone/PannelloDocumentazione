@@ -19,6 +19,7 @@ window.onload = function(){
 	}
 
 	function bottoniElimina(){
-
+		_bottoni.innerHTML = `<a href="modifica_procedure.cfm?tipo=aggiungi">  <button class='btn btn-primary'>Aggiungi Procedura</button> </a>
+		<a href='modifica_procedure.cfm?tipo=elimina&procedureid=${this.value}'>  <button class='btn btn-danger'>Elimina Procedura</button> </a>`
 	}
 }

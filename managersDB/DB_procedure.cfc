@@ -22,5 +22,12 @@
 				{},
 				{datasource = "qa_tirocinioDev"});
 		}
+
+		public any function eliminaFormDB(form){
+			q = queryExecute(
+				"delete from ListaProcedure where procedureID = '#form.txtProcedureID#'",
+				{},
+				{datasource = "qa_tirocinioDev"});
+		}
 	</cfscript>
 </cfcomponent>
