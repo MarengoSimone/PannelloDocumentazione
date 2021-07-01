@@ -6,24 +6,24 @@
 			if(#mode# == "Aggiungi")
 			{
 				row = "<td scope='row'> <input type='text' name='txtNome'> </td>
-					   <td scope='row'> <input type='text' name='txtFunzionalita'> </td>
-					   <td scope='row'> <input type='text' name='txtPagine'> </td>
-					   <td scope='row'> <input type='text' name='txtDescrizione'> </td>";
+					   <td scope='row'> <textarea name='txtFunzionalita' cols='30'> </textarea> </td>
+					   <td scope='row'> <textarea name='txtPagine' cols='30'> </textarea> </td>
+					   <td scope='row'> <textarea name='txtDescrizione' cols='30'> </textarea> </td>";
 			}
 			else if(#mode# == "Aggiorna"){
 				q = gestioneDB.getTabella(#id#);
 				row = "<td scope='row'> <input type='text' name='txtNome' value=' #q.nomeTabella# ' readonly> </td>
-					   <td scope='row'> <input type='text' name='txtFunzionalita' value=' #q.funzionalita# '> </td>
-					   <td scope='row'> <input type='text' name='txtPagine' value=' #q.pagineUtilizzo# '> </td>
-					   <td scope='row'> <input type='text' name='txtDescrizione' value=' #q.descrizione# '> </td>";
+					   <td scope='row'> <textarea name='txtFunzionalita'> #q.funzionalita# </textarea> </td>
+					   <td scope='row'> <textarea name='txtPagine'> #q.pagineUtilizzo# </textarea> </td>
+					   <td scope='row'> <textarea name='txtDescrizione'> #q.descrizione# </textarea> </td>";
 			}
 			else if(#mode# == "Elimina")
 			{
 				q = gestioneDB.getTabella(#id#);
 				row = "<td scope='row'> <input type='text' name='txtNome' value=' #q.nomeTabella# ' readonly> </td>
-					   <td scope='row'> <input type='text' name='txtFunzionalita' value=' #q.funzionalita# 'readonly > </td>
-					   <td scope='row'> <input type='text' name='txtPagine' value=' #q.pagineUtilizzo# ' readonly> </td>
-					   <td scope='row'> <input type='text' name='txtDescrizione' value=' #q.descrizione# ' readonly> </td>";
+					   <td scope='row'> <textarea name='txtFunzionalita' readonly> #q.funzionalita#  </textarea> </td>
+					   <td scope='row'> <textarea name='txtPagine' readonly> #q.pagineUtilizzo# </textarea> </td>
+					   <td scope='row'> <textarea name='txtDescrizione' readonly> #q.descrizione# </textarea> </td>";
 			}
 			return row;
 		}
