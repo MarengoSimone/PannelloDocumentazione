@@ -1,3 +1,21 @@
+<cfscript>
+	manager = createObject("component","PannelloDocumentazione\managers\tabelle");
+	managerTabelle = createObject("component","PannelloDocumentazione\managers\gestione_tabelle");
+
+	if(isDefined("form") && isDefined("form.BTNSUBMIT") && (#form.BTNSUBMIT# == "Aggiungi Tabella"))
+	{
+		managerTabelle.uploadTabella(form);
+	}
+	else if (isDefined("form") && isDefined("form.BTNSUBMIT") && (#form.BTNSUBMIT# == "Aggiorna Tabella"))
+	{
+		managerTabelle.updateTabella(form,url.id);
+	}
+	else if (isDefined("form") && isDefined("form.BTNSUBMIT") && (#form.BTNSUBMIT# == "Elimina Tabella"))
+	{
+		managerTabelle.deleteTabella(#url.id#);
+	}
+</cfscript>
+
 <!DOCTYPE html>
 <html>
 	<head lang="it">
@@ -9,6 +27,7 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 		<!-- SPECIFICI -->
 		<link rel="stylesheet" href="..\style\index.css">
+		<script src="..\script\tabelle.js"></script>
 	</head>
 	<body>
 		
@@ -26,7 +45,6 @@
 					  </thead>
 					  <tbody>
 					  		<cfscript>
-					  			manager = createObject("component","PannelloDocumentazione\managers\tabelle");
 				  				writeOutput(manager.creaRighe());
 					  		</cfscript>
 					  </tbody>
@@ -34,7 +52,7 @@
 
 				<div id="buttons">
 					<cfscript>
-						
+						writeOutput(manager.generaPulsanti());
 					</cfscript>
 				</div>
 	</body>
