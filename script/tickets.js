@@ -23,7 +23,11 @@ function bottoniModifica(){
 		<a href='gestione_ticket.cfm?mode=Aggiorna&nome=${this.value}&categoria=${categoria.value}'>  <button class='btn btn-info' id='btnAggiorna'> Aggiorna Ticket</button> </a>`
 
 		for(let i = 0; i < _radiosElimina.length; i++){
-			_radiosElimina[i].checked = false;
+			if(_radiosElimina[i].checked == true)
+			{
+				_radiosElimina[i].checked = false;
+			}
+			
 		}
 }
 
@@ -34,7 +38,10 @@ function bottoniElimina(){
 		<a href='gestione_ticket.cfm?mode=Elimina&nome=${this.value}&categoria=${categoria.value}'>  <button class='btn btn-danger' id='btnElimina'>Elimina Ticket</button> </a`
 
 		for(let i = 0; i < _radiosModifica.length; i++){
-			_radiosModifica[i].checked = false;
+			if(_radiosModifica[i].checked == true)
+			{
+				_radiosModifica[i].checked = false;
+			}
 		}
 }
 
