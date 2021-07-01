@@ -17,7 +17,7 @@
 					local.note = "/";
 				}
 
-				local.righeTabella &= "<tr><td scope='row'>#allProcedure.nomeProcedura[local.i]#</td><td scope='row'><textarea name='txtDescrizione' rows='5' cols='60' style='resize: none;' readonly disabled>#local.descrizione#</textarea></td><td scope='row'><textarea name='txtDescrizione' rows='5' cols='60' style='resize: none;' readonly disabled>#local.note#</textarea></td><td scope = 'row'><input type='radio' name='radioModifica' value='#allProcedure.procedureID[local.i]#'></td><td scope = 'row'><input type='radio' name='radioElimina' value='#allProcedure.procedureID[local.i]#'></td></tr>";
+				local.righeTabella &= "<tr><td scope='row'>#allProcedure.nomeProcedura[local.i]#</td><td scope='row'><textarea rows='5' cols='60' style='resize: none;' readonly disabled>#local.descrizione#</textarea></td><td scope='row'><textarea rows='5' cols='60' style='resize: none;' readonly disabled>#local.note#</textarea></td><td scope = 'row'><input type='radio' name='radioModifica' value='#allProcedure.procedureID[local.i]#'></td><td scope = 'row'><input type='radio' name='radioElimina' value='#allProcedure.procedureID[local.i]#'></td></tr>";
 			}
 			local.righeTabella &= "</tbody>";
 
