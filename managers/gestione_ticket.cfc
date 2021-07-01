@@ -6,27 +6,27 @@
 			if(#mode# == "Aggiungi")
 			{
 				row = "<td scope='row'> <input type='text' name='txtNome'> </td>
-					   <td scope='row'> <input type='text' name='txtDescrizione'> </td>
-					   <td scope='row'> <input type='text' name='txtProblemi'> </td>
-					   <td scope='row'> <input type='text' name='txtTest'> </td>
-					   <td scope='row'> <input type='text' name='txtInstallazione'> </td>";
+					   <td scope='row'> <textarea name='txtDescrizione' cols='40'> </textarea> </td>
+					   <td scope='row'> <textarea name='txtProblemi' cols='20'> </textarea> </td>
+					   <td scope='row'> <textarea name='txtTest' cols='40'> </textarea> </td>
+					   <td scope='row'> <textarea name='txtInstallazione' cols='40'> </textarea> </td>";
 			}
 			else if(#mode# == "Aggiorna"){
 				q = gestioneDB.getTicket(#nome#);
 				row = "<td scope='row'> <input type='text' name='txtNome' value=' #q.nomeTicket# ' readonly> </td>
-					   <td scope='row'> <input type='text' name='txtDescrizione' value=' #q.descrizione# '> </td>
-					   <td scope='row'> <input type='text' name='txtProblemi' value=' #q.problemi# '> </td>
-					   <td scope='row'> <input type='text' name='txtTest' value=' #q.test# '> </td>
-					   <td scope='row'> <input type='text' name='txtInstallazione' value=' #q.installazione# '> </td>";
+					   <td scope='row'> <textarea name='txtDescrizione'> #q.descrizione# </textarea> </td>
+					   <td scope='row'> <textarea name='txtProblemi'> #q.problemi# </textarea> </td>
+					   <td scope='row'> <textarea name='txtTest'> #q.test# </textarea> </td>
+					   <td scope='row'> <textarea name='txtInstallazione'> #q.installazione# </textarea> </td>";
 			}
 			else if(#mode# == "Elimina")
 			{
 				q = gestioneDB.getTicket(#nome#);
 				row = "<td scope='row'> <input type='text' name='txtNome' value=' #q.nomeTicket# ' readonly> </td>
-					   <td scope='row'> <input type='text' name='txtDescrizione' value=' #q.descrizione# 'readonly > </td>
-					   <td scope='row'> <input type='text' name='txtProblemi' value=' #q.problemi# ' readonly> </td>
-					   <td scope='row'> <input type='text' name='txtTest' value=' #q.test# ' readonly> </td>
-					   <td scope='row'> <input type='text' name='txtInstallazione' value=' #q.installazione# ' readonly> </td>";
+					   <td scope='row'> <textarea name='txtDescrizione' readonly> #q.descrizione# </textarea> </td>
+					   <td scope='row'> <textarea name='txtProblemi' readonly> #q.problemi# </textarea> </td>
+					   <td scope='row'> <textarea name='txtTest' readonly > #q.test# </textarea> </td>
+					   <td scope='row'> <textarea name='txtInstallazione' readonly> #q.installazione# </textarea> </td>";
 			}
 			return row;
 		}

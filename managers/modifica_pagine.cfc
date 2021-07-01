@@ -14,9 +14,9 @@
 		public string function tabellaAggiungi(){
 			return "<tbody>
 					<td scope='row'><input type='text' name='txtNomePagina' required></td>
-					<td scope='row'><input type='text' name='txtLocazione'></td>
-					<td scope='row'><input type='text' name='txtFunzioni'></td>
-					<td scope='row'><input type='text' name='txtTabelle'></td>
+					<td scope='row'><textarea name='txtLocazione' cols='50'></textarea></td>
+					<td scope='row'><textarea name='txtFunzioni' cols='50'></textarea></td>
+					<td scope='row'><textarea name='txtTabelle' cols='50'></textarea></td>
 					</tbody>";
 		}
 
@@ -24,9 +24,9 @@
 			allPaginePagID = managerDB.getAllPaginePagID(pagid);
 			return "<tbody>
 					<td scope='row'><input type='text' name='txtNomePagina' value='#allPaginePagID.nomePagina#' required></td>
-					<td scope='row'><input type='text' name='txtLocazione' value='#allPaginePagID.loc#'></td>
-					<td scope='row'><input type='text' name='txtFunzioni' value='#allPaginePagID.funzioni#'></td>
-					<td scope='row'><input type='text' name='txtTabelle' value='#allPaginePagID.tabelle#'></td>
+					<td scope='row'><textarea name='txtLocazione' cols='50'>#allPaginePagID.loc#</textarea></td>
+					<td scope='row'><textarea name='txtFunzioni' cols='50'>#allPaginePagID.funzioni#</textarea></td>
+					<td scope='row'><textarea name='txtTabelle' cols='50'>#allPaginePagID.tabelle#</textarea></td>
 					<input type='hidden' name='txtPagID' value='#allPaginePagID.pagID#'>
 					</tbody>";
 		}
@@ -35,9 +35,9 @@
 			allPaginePagID = managerDB.getAllPaginePagID(pagid);
 			return "<tbody>
 					<td scope='row'><input type='text' name='txtNomePagina' value='#allPaginePagID.nomePagina#' readonly></td>
-					<td scope='row'><input type='text' name='txtLocazione' value='#allPaginePagID.loc#' readonly></td>
-					<td scope='row'><input type='text' name='txtFunzioni' value='#allPaginePagID.funzioni#' readonly></td>
-					<td scope='row'><input type='text' name='txtTabelle' value='#allPaginePagID.tabelle#' readonly></td>
+					<td scope='row'><textarea name='txtLocazione' cols='50' readonly disabled>#allPaginePagID.loc#</textarea></td>
+					<td scope='row'><textarea name='txtFunzioni' cols='50' readonly disabled>#allPaginePagID.funzioni#</textarea></td>
+					<td scope='row'><textarea name='txtTabelle' cols='50' readonly disabled>#allPaginePagID.tabelle#</textarea></td>
 					<input type='hidden' name='txtPagID' value='#allPaginePagID.pagID#'>
 					</tbody>
 					<h2>SICURO DI VOLER ELIMINARE?</h2>";	
