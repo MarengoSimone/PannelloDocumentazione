@@ -1,6 +1,19 @@
 <cfscript>
-	categ = createObject("component", "PannelloDocumentazione\managers\aggiungi_categoria");
-	categ.uploadCategoria(form);
+	categ = createObject("component", "PannelloDocumentazione\managers\gestione_categorie");
+	manager = createObject("component","PannelloDocumentazione\managers\categorie");
+
+	if(isDefined("form") && isDefined("form.BTNSUBMIT") && (#form.BTNSUBMIT# == "Aggiungi Categoria"))
+	{
+		categ.uploadCategoria(form);
+	}
+	else if (isDefined("form") && isDefined("form.BTNSUBMIT") && (#form.BTNSUBMIT# == "Aggiorna Categoria"))
+	{
+		categ.updateCategoria(form,url.categoria);
+	}
+	else if (isDefined("form") && isDefined("form.BTNSUBMIT") && (#form.BTNSUBMIT# == "Elimina Categoria"))
+	{
+		categ.deleteCategoria(#url.categoria#);
+	}
 </cfscript>
 
 <!DOCTYPE html>
@@ -14,6 +27,7 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 		<!-- SPECIFICI -->
 		<link rel="stylesheet" href="..\style\index.css">
+		<script src="..\script\categorie.js"></script>
 	</head>
 	<body>
 		
@@ -22,15 +36,20 @@
 				  <thead>
 				    <tr>
 				      <th scope="col">Categoria</th>
+				      <th scope="col">Modifica</th>
+					  <th scope="col">Elimina</th>
 				    </tr>
 				  </thead>
 				  <tbody>
 				  		<cfscript>
-				  			manager = createObject("component","PannelloDocumentazione\managers\categorie");
 				  			writeOutput(manager.creaRighe());
 				  		</cfscript>
 				  </tbody>
 			</table>
-			<a href="aggiungi_categoria.cfm">  <button class='btn btn-primary'> Aggiungi Categoria</button> </a>
+			<div id="buttons">
+					<cfscript>
+						writeOutput(manager.generaPulsanti());
+					</cfscript>
+				</div>
 	</body>
 </html>

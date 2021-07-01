@@ -1,6 +1,5 @@
 <cfscript>
 	gestioneTicket = createObject("component", "PannelloDocumentazione\managers\gestione_ticket");
-
 	if(!isDefined("url.mode"))
 	{
 		cflocation( url="categorie.cfm" );
