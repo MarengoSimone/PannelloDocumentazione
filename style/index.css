@@ -29,7 +29,11 @@ thead{
 	border:1px solid black;
 }
 
+<<<<<<< HEAD
 .btn{
+=======
+button{
+>>>>>>> marengo_5
 	margin:15px;
 }
 
@@ -48,8 +52,23 @@ tbody tr:last-of-type{
 
 #btnSubmit{
 	margin-left: 20px;
+<<<<<<< HEAD
 }
 
 #txtCategoria{
 	width: 8em;
+=======
+}
+
+#txtCategoria{
+	width: 8em;
+}
+
+.btn-warning{
+	color:white;
+}
+
+.btn:hover{
+	cursor: pointer;
+>>>>>>> marengo_5
 }
