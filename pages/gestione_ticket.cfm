@@ -4,20 +4,6 @@
 	{
 		cflocation( url="categorie.cfm" );
 	}
-
-	if(isDefined("form") && isDefined("form.BTNSUBMIT") && (#form.BTNSUBMIT# == "Aggiungi Ticket"))
-	{
-		gestioneTicket.uploadTicket(form,url.categoria);
-	}
-	else if (isDefined("form") && isDefined("form.BTNSUBMIT") && (#form.BTNSUBMIT# == "Aggiorna Ticket"))
-	{
-		gestioneTicket.updateTicket(form,url.categoria);
-	}
-	else if (isDefined("form") && isDefined("form.BTNSUBMIT") && (#form.BTNSUBMIT# == "Elimina Ticket"))
-	{
-		writeOutput(url.nome);
-		gestioneTicket.deleteTicket(form,url.nome);
-	}
 </cfscript>
 
 <!DOCTYPE html>
