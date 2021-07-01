@@ -14,7 +14,7 @@
 
 		public string function tabellaAggiungi(){
 			return "<tbody>
-					<td scope='row'><input type='text' name='txtAmbiente'></td>
+					<td scope='row'><input type='text' name='txtAmbiente' required></td>
 					<td scope='row'><input type='text' name='txtPortale'></td>
 					<td scope='row'><input type='text' name='txtAdministrator'></td>
 					<td scope='row'><input type='text' name='txtUtils'></td>

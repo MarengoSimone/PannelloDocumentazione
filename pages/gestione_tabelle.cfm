@@ -1,6 +1,11 @@
 <cfscript>
 	gestioneTabelle = createObject("component", "PannelloDocumentazione\managers\gestione_tabelle");
-	if(#url.mode# != "Aggiorna" && #url.mode# != "Aggiungi" && #url.mode# != "Elimina")
+
+	if(!isDefined("url.mode"))
+	{
+		cflocation( url="tabelle.cfm" );
+	}
+	else if((#url.mode# != "Aggiorna" && #url.mode# != "Aggiungi" && #url.mode# != "Elimina"))
 	{
 		cflocation( url="tabelle.cfm" );
 	}
