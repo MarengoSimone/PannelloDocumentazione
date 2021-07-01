@@ -15,6 +15,11 @@
 		gestioneTicket.deleteTicket(form,#url.nome#);
 	}
 
+	if(!isDefined("url.categoria"))
+	{
+		cflocation( url="categorie.cfm" );
+	}
+
 </cfscript>
 
 <!DOCTYPE html>
