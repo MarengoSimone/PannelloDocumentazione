@@ -5,7 +5,22 @@
 			allPagine = managerDB.getAllPagine();
 			local.righeTabella = "<tbody>";
 			for(local.i = 1; local.i <= allPagine.recordCount; local.i++){
-				local.righeTabella &= "<tr><td scope='row'>#allPagine.nomePagina#</td><td scope='row'>#allPagine.loc#</td><td scope='row'>#allPagine.funzioni#</td><td scope='row'>#allPagine.tabelle#</td><td scope = 'row'><input type='radio' name='radioModifica' value='#allPagine.nomePagina[local.i]#'></td><td scope = 'row'><input type='radio' name='radioElimina' value='#allPagine.nomePagina[local.i]#'></td></tr>";
+				if(allPagine.loc[local.i] != "")
+					local.locazione = allPagine.loc[local.i];
+				else
+					local.locazione = "/";
+
+				if(allPagine.funzioni[local.i] != "")
+					local.funzioni = allPagine.funzioni[local.i];
+				else
+					local.funzioni = "/";
+
+				if(allPagine.tabelle[local.i] != "")
+					local.tabelle = allPagine.tabelle[local.i];
+				else
+					local.tabelle = "/";
+
+				local.righeTabella &= "<tr><td scope='row'>#allPagine.nomePagina[local.i]#</td><td scope='row'>#local.locazione#</td><td scope='row'>#local.funzioni#</td><td scope='row'>#local.tabelle#</td><td scope = 'row'><input type='radio' name='radioModifica' value='#allPagine.pagID[local.i]#'></td><td scope = 'row'><input type='radio' name='radioElimina' value='#allPagine.pagID[local.i]#'></td></tr>";
 			}
 			local.righeTabella &= "</tbody>";
 
@@ -15,6 +30,10 @@
 		public void function controlloForm(form){
 			if(isDefined("form") && isDefined("form.btnAggiungiPagina") && form.btnAggiungiPagina == "Aggiungi Pagina"){
 				managerDB.aggiungiFormDB(form);
+			}else if(isDefined("form") && isDefined("form.btnModificaPagina") && form.btnModificaPagina == "Aggiorna Pagina"){
+				managerDB.updateFormDB(form);
+			}else if(isDefined("form") && isDefined("form.btnEliminaPagina") && form.btnEliminaPagina == "Elimina Pagina"){
+				managerDB.eliminaFormDB(form);
 			}
 		}
 	</cfscript>

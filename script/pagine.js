@@ -15,10 +15,11 @@ window.onload = function(){
 
 	function bottoniModifica(){
 		_bottoni.innerHTML = `<a href="modifica_pagine.cfm?tipo=aggiungi">  <button class='btn btn-primary'>Aggiungi Pagina</button> </a>
-		<a href='modifica_pagine.cfm?tipo=modifica&pagina=${this.value}'>  <button class='btn btn-info'>Aggiorna Pagina</button> </a>`
+		<a href='modifica_pagine.cfm?tipo=modifica&pagid=${this.value}'>  <button class='btn btn-info'>Aggiorna Pagina</button> </a>`
 	}
 
 	function bottoniElimina(){
-
+		_bottoni.innerHTML = `<a href="modifica_pagine.cfm?tipo=aggiungi">  <button class='btn btn-primary'>Aggiungi Pagina</button> </a>
+		<a href='modifica_pagine.cfm?tipo=elimina&pagid=${this.value}'>  <button class='btn btn-danger'>Elimina Pagina</button> </a>`
 	}
 }

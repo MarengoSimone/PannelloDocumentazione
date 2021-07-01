@@ -3,6 +3,10 @@
 	if(!isDefined("url.tipo")){
 		cflocation( url="pagine.cfm" );
 	}
+
+	if(!isDefined("url.pagid")){
+		url.pagid = 0;
+	}
 </cfscript>
 <!DOCTYPE html>
 <html>
@@ -29,11 +33,13 @@
 				    </tr>
 				  </thead>
 				  <cfscript>
-				  	writeOutput(manager.scriviTabella(url.tipo, url.pagina));
+				  	writeOutput(manager.scriviTabella(url.tipo, url.pagid));
 				  </cfscript>
 			</table>
 			<div id="bottoni">
-				<input type = "submit" class='btn btn-primary' name="btnAggiungiPagina" value="Aggiungi Pagina">
+				<cfscript>
+					writeOutput(manager.creaBottoni(url.tipo));
+				</cfscript>
 			</div>
 		</cfform>
 	</body>
