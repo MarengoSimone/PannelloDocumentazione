@@ -13,7 +13,7 @@
 
 
 		public any function generaPulsanti(){
-			return "<a href='index.cfm'>  <button class='btn btn-warning'> Indietro</button> </a>
+			return "
 				<a href='gestione_categorie.cfm?mode=Aggiungi&categoria=categoria'>  <button class='btn btn-primary'> Aggiungi Categoria</button> </a>";
 		}
 	</cfscript>

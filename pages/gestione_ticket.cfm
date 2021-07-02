@@ -1,5 +1,6 @@
 <cfscript>
 	gestioneTicket = createObject("component", "PannelloDocumentazione\managers\gestione_ticket");
+	navigation = createObject('component', 'PannelloDocumentazione/navigation/navigazione');
 	if(!isDefined("url.mode"))
 	{
 		cflocation( url="categorie.cfm" );
@@ -31,6 +32,9 @@
 		<link rel="stylesheet" href="..\style\index.css">
 	</head>
 	<body>
+		<cfscript>
+			writeOutput(navigation.creaNavigazione());
+		</cfscript>
 		
 			<h1 class='text-center' style="margin:20px"> <cfoutput> #url.mode# Ticket: </cfoutput> </h1>
 			<cfform  action='tickets.cfm?categoria=#url.categoria#&nome=#url.nome#' method='post'>

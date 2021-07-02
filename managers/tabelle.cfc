@@ -12,7 +12,7 @@
 		}
 
 		public any function generaPulsanti(){
-			return "<a href='index.cfm'>  <button class='btn btn-warning'> Indietro</button> </a>
+			return "
 				<a href='gestione_tabelle.cfm?mode=Aggiungi&id=0'>  <button class='btn btn-primary'> Aggiungi Tabella</button> </a>";
 		}
 	</cfscript>

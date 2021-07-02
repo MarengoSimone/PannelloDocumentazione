@@ -1,5 +1,6 @@
 <cfscript>
 	manager = createObject('component', "PannelloDocumentazione/managers/modifica_ambienti");
+	navigation = createObject('component', 'PannelloDocumentazione/navigation/navigazione');
 
 	if(!isDefined("url.tipo")){
 		cflocation( url="ambienti.cfm" );
@@ -22,6 +23,9 @@
 		<link rel="stylesheet" href="..\style\index.css">
 	</head>
 	<body>
+		<cfscript>
+			writeOutput(navigation.creaNavigazione());
+		</cfscript>
 		<cfform action="ambienti.cfm" method="post">
 			<h1 class='text-center' style="margin:20px">AMBIENTI:</h1>
 			<table class="table table-striped">

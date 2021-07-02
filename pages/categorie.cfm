@@ -1,6 +1,7 @@
 <cfscript>
 	categ = createObject("component", "PannelloDocumentazione\managers\gestione_categorie");
 	manager = createObject("component","PannelloDocumentazione\managers\categorie");
+	navigation = createObject('component', 'PannelloDocumentazione/navigation/navigazione');
 
 	if(isDefined("form") && isDefined("form.BTNSUBMIT") && (#form.BTNSUBMIT# == "Aggiungi Categoria"))
 	{
@@ -30,6 +31,9 @@
 		<script src="..\script\categorie.js"></script>
 	</head>
 	<body>
+		<cfscript>
+			writeOutput(navigation.creaNavigazione());
+		</cfscript>
 		
 			<h1 class='text-center' style="margin:20px">Categorie di Ticket disponibili:</h1>
 			<table class="table table-striped">
