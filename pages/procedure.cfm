@@ -1,5 +1,6 @@
 <cfscript>
 	manager = createObject('component', "PannelloDocumentazione/managers/procedure");
+	navigation = createObject('component', 'PannelloDocumentazione/navigation/navigazione');
 	manager.controlloForm(form);
 </cfscript>
 <!DOCTYPE html>
@@ -16,6 +17,9 @@
 		<script type="text/javascript" src="..\script\procedure.js"></script>
 	</head>
 	<body>
+		<cfscript>
+			writeOutput(navigation.creaNavigazione());
+		</cfscript>
 		<h1 class='text-center' style="margin:20px">PROCEDURE:</h1>
 		<table class="table table-striped">
 			  <thead>
