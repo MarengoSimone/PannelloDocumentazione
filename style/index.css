@@ -1,6 +1,5 @@
 body{
 	text-align: center;
-	background-color:#b3eaff73;
 }
 
 #table > div {
@@ -21,8 +20,11 @@ td:hover{
 }
 
 .paginaA:hover{
+
+   background-color: #b3eaff;
+}
+a:hover{
     text-decoration: none;
-    background-color: #CAFFE8;
 }
 
 thead{
@@ -90,7 +92,7 @@ html{
     -webkit-text-size-adjust:100%;
 }
 body {
-    background-color: #f9f9f9;
+    background-color:#b3eaff70;
     font-family: Ubuntu, sans-serif;
     transition: all .25s ease-in-out;
     position: relative;

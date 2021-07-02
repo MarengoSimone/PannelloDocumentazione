@@ -1,11 +1,11 @@
 <cfcomponent>
 	<cfscript> 
 		public any function creaTabella() {
-		  	return "<div class=paginaA> <a href=ambienti.cfm> Elenco Ambienti </a> </div>
-		  	<div class=paginaA> <a href=pagine.cfm> Elenco Pagine </a> </div>
-		  	<div class=paginaA> <a href=procedure.cfm> Elenco Procedure </a> </div>
-		  	<div class=paginaA> <a href=tabelle.cfm> Elenco Tabelle </a> </div>
-		  	<div class=paginaA> <a href=categorie.cfm> Elenco Ticket </a> </div>";
+		  	return "<a href=ambienti.cfm><div class=paginaA>  Elenco Ambienti  </div></a>
+		  	<a href=pagine.cfm><div class=paginaA>  Elenco Pagine </div> </a>
+		  	<a href=procedure.cfm><div class=paginaA>  Elenco Procedure  </div></a>
+		  	<a href=tabelle.cfm><div class=paginaA>  Elenco Tabelle </div> </a>
+		  	<a href=categorie.cfm><div class=paginaA>  Elenco Ticket  </div></a>";
 		}
 	</cfscript>
 </cfcomponent>
