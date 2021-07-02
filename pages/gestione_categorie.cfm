@@ -1,6 +1,15 @@
 <cfscript> 
 	manager = createObject("component","PannelloDocumentazione\managers\gestione_categorie");
 
+	if(!isDefined("url.mode"))
+	{
+		cflocation( url="categorie.cfm" );
+	}
+	else if(!isDefined("url.categoria"))
+	{
+		cflocation( url="categorie.cfm" );
+	}
+
 	if(isDefined("form") && isDefined("form.BTNSUBMIT") && (#form.BTNSUBMIT# == "Aggiungi Categoria"))
 	{
 		manager.uploadCategoria(form);

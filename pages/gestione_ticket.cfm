@@ -4,6 +4,14 @@
 	{
 		cflocation( url="categorie.cfm" );
 	}
+	else if(!isDefined("url.categoria"))
+	{
+		cflocation( url="categorie.cfm" );
+	}
+	else if(!isDefined("url.nome"))
+	{
+		cflocation( url="categorie.cfm" );
+	}
 	else if(#url.mode# != "Aggiorna" && #url.mode# != "Aggiungi" && #url.mode# != "Elimina")
 	{
 		cflocation( url="categorie.cfm" );

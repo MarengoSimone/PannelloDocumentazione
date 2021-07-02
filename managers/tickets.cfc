@@ -17,7 +17,7 @@
 				app = " ";
 				for(i=1;i<=tickets.recordCount;i++)
 				{	
-					app &= "<tr> <input class='categoria' type='hidden'value='#categoria#'> </input> <td>#tickets.nomeTicket[i]#</td> <td>#tickets.descrizione[i]#</td> <td>#tickets.problemi[i]#</td> <td>#tickets.test[i]#</td> <td>#tickets.installazione[i]#</td> <td><input type='radio' name='rdbModifica' value='#tickets.nomeTicket[i]#'></td> <td><input type='radio' name='rdbElimina' value='#tickets.nomeTicket[i]#'></td> </tr>";
+					app &= "<tr> <input class='categoria' type='hidden'value='#categoria#'> </input> <td>#tickets.nomeTicket[i]#</td> <td><textarea readonly>#tickets.descrizione[i]# </textarea> </td> <td> <textarea readonyl> #tickets.problemi[i]# </textarea> </td> <td> <textarea readonly>#tickets.test[i]# </textarea> </td> <td> <textarea readonly> #tickets.installazione[i]# </textarea> </td> <td><input type='radio' name='rdbModifica' value='#tickets.nomeTicket[i]#'></td> <td><input type='radio' name='rdbElimina' value='#tickets.nomeTicket[i]#'></td> </tr>";
 				}
 				return app;
 			}

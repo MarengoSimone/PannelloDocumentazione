@@ -5,6 +5,10 @@
 	{
 		cflocation( url="tabelle.cfm" );
 	}
+	else if(!isDefined("url.id"))
+	{
+		cflocation( url="tabelle.cfm" );
+	}
 	else if((#url.mode# != "Aggiorna" && #url.mode# != "Aggiungi" && #url.mode# != "Elimina"))
 	{
 		cflocation( url="tabelle.cfm" );
