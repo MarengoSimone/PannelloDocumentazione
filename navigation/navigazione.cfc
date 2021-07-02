@@ -2,7 +2,7 @@
 	<cfscript>
 		public string function creaNavigazione(){
 			return "<nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
-					  <a class='navbar-brand' href=''>
+					  <a class='navbar-brand' href='index.cfm'>
     				  <img src='..\assets\icon\tesisquareicon.png' width='35' height='35' class='d-inline-block align-top' alt=''>
     					Pannello Documentazione
   						</a>
