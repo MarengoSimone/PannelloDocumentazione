@@ -5,7 +5,7 @@
 	}
 
 	if(!isDefined("url.pagid")){
-		url.pagid = 0;
+		cflocation( url="pagine.cfm" );
 	}
 </cfscript>
 <!DOCTYPE html>

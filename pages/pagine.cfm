@@ -33,7 +33,7 @@
 			  </cfscript>
 		</table>
 		<div id="bottoni">
-			<a href="modifica_pagine.cfm?tipo=aggiungi">  <button class='btn btn-primary'>Aggiungi Pagina</button> </a>
+			<a href="modifica_pagine.cfm?tipo=aggiungi&pagid=0">  <button class='btn btn-primary'>Aggiungi Pagina</button> </a>
 		</div>
 	</body>
 </html>

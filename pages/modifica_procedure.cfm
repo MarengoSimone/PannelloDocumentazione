@@ -5,7 +5,7 @@
 	}
 
 	if(!isDefined("url.procedureid")){
-		url.procedureid = 0;
+		cflocation( url="procedure.cfm" );
 	}
 </cfscript>
 <!DOCTYPE html>

@@ -37,7 +37,7 @@
 			  </cfscript>
 		</table>
 		<div  id="ambienteModifica">
-			<a href="modifica_ambienti.cfm?tipo=aggiungi">  <button class='btn btn-primary'>Aggiungi Ambiente</button> </a>
+			<a href="modifica_ambienti.cfm?tipo=aggiungi&ambiente=niente">  <button class='btn btn-primary'>Aggiungi Ambiente</button> </a>
 		</div>
 	</body>
 </html>

@@ -6,7 +6,7 @@
 	}
 
 	if(!isDefined("url.ambiente")){
-		url.ambiente = "niente";
+		cflocation( url="ambienti.cfm" );
 	}
 </cfscript>
 <!DOCTYPE html>

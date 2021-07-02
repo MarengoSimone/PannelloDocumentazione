@@ -14,7 +14,7 @@ window.onload = function(){
 	}
 
 	function bottoniModifica(){
-		_bottoni.innerHTML = `<a href="modifica_pagine.cfm?tipo=aggiungi">  <button class='btn btn-primary'>Aggiungi Pagina</button> </a>
+		_bottoni.innerHTML = `<a href="modifica_pagine.cfm?tipo=aggiungi&pagid=0">  <button class='btn btn-primary'>Aggiungi Pagina</button> </a>
 		<a href='modifica_pagine.cfm?tipo=modifica&pagid=${this.value}'>  <button class='btn btn-info'>Aggiorna Pagina</button> </a>`
 
 		for(let i = 0; i < _radioElimina.length; i++){
@@ -25,7 +25,7 @@ window.onload = function(){
 	}
 
 	function bottoniElimina(){
-		_bottoni.innerHTML = `<a href="modifica_pagine.cfm?tipo=aggiungi">  <button class='btn btn-primary'>Aggiungi Pagina</button> </a>
+		_bottoni.innerHTML = `<a href="modifica_pagine.cfm?tipo=aggiungi&pagid=0">  <button class='btn btn-primary'>Aggiungi Pagina</button> </a>
 		<a href='modifica_pagine.cfm?tipo=elimina&pagid=${this.value}'>  <button class='btn btn-danger'>Elimina Pagina</button> </a>`
 
 		for(let i = 0; i < _radioModifica.length; i++){

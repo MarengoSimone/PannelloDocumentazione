@@ -14,7 +14,7 @@ window.onload = function(){
 	}
 
 	function bottoniModifica(){
-		_bottoni.innerHTML = `<a href="modifica_procedure.cfm?tipo=aggiungi">  <button class='btn btn-primary'>Aggiungi Procedura</button> </a>
+		_bottoni.innerHTML = `<a href="modifica_procedure.cfm?tipo=aggiungi&procedureid=0">  <button class='btn btn-primary'>Aggiungi Procedura</button> </a>
 		<a href='modifica_procedure.cfm?tipo=modifica&procedureid=${this.value}'>  <button class='btn btn-info'>Aggiorna Procedura</button> </a>`
 
 		for(let i = 0; i < _radioElimina.length; i++){
@@ -25,7 +25,7 @@ window.onload = function(){
 	}
 
 	function bottoniElimina(){
-		_bottoni.innerHTML = `<a href="modifica_procedure.cfm?tipo=aggiungi">  <button class='btn btn-primary'>Aggiungi Procedura</button> </a>
+		_bottoni.innerHTML = `<a href="modifica_procedure.cfm?tipo=aggiungi&procedureid=0">  <button class='btn btn-primary'>Aggiungi Procedura</button> </a>
 		<a href='modifica_procedure.cfm?tipo=elimina&procedureid=${this.value}'>  <button class='btn btn-danger'>Elimina Procedura</button> </a>`
 
 		for(let i = 0; i < _radioModifica.length; i++){

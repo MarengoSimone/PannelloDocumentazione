@@ -32,7 +32,7 @@
 			  </cfscript>
 		</table>
 		<div id="bottoni">
-			<a href="modifica_procedure.cfm?tipo=aggiungi">  <button class='btn btn-primary'>Aggiungi Procedura</button> </a>
+			<a href="modifica_procedure.cfm?tipo=aggiungi&procedureid=0">  <button class='btn btn-primary'>Aggiungi Procedura</button> </a>
 		</div>
 	</body>
 </html>
