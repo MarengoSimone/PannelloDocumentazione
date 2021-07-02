@@ -35,6 +35,7 @@
 		<!-- SPECIFICI -->
 		<link rel="stylesheet" href="..\style\index.css">
 		<script src="..\script\tickets.js"></script>
+		<link rel="icon" href="..\assets\img\icon.png" type="image/icon type">
 	</head>
 	<body>
 		<cfscript>

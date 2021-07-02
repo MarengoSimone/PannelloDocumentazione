@@ -36,6 +36,7 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 		<!-- SPECIFICI -->
 		<link rel="stylesheet" href="..\style\index.css">
+		<link rel="icon" href="..\assets\img\icon.png" type="image/icon type">
 	</head>
 	<body>
 		<cfscript>

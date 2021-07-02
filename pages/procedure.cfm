@@ -15,6 +15,7 @@
 		<!-- SPECIFICI -->
 		<link rel="stylesheet" href="..\style\index.css">
 		<script type="text/javascript" src="..\script\procedure.js"></script>
+		<link rel="icon" href="..\assets\img\icon.png" type="image/icon type">
 	</head>
 	<body>
 		<cfscript>

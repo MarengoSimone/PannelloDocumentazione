@@ -20,6 +20,11 @@ td:hover{
 	cursor:pointer;
 }
 
+.paginaA:hover{
+    text-decoration: none;
+    background-color: #CAFFE8;
+}
+
 thead{
 	background-color: lightblue;
 	border:2px solid black;
