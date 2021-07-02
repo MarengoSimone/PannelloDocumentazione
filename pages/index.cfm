@@ -1,17 +1,23 @@
 <cfscript>
 	manager = createObject("component", "PannelloDocumentazione\managers\index");
+    navigation = createObject("component", "PannelloDocumentazione\navigation\navigazione");
 </cfscript>
 
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="content-type" content="text/html">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <link rel="stylesheet" type="text/css" href="..\style\index.css">
     <link rel="icon" href="..\assets\img\icon.png" type="image/icon type">
     <title>Pannello Documentazione | Home</title>
 </head>
-<body id="wrapper">
 
+<body id="wrapper">
+        <cfscript> 
+            writeOutput(navigation.creaNavigazione());
+        </cfscript>
     <header>
         <h1>Pannello Documentazione:</h1>
         <p style='color:aquamarine'>An open-source code for a detailed documentation! </p>

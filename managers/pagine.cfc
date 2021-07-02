@@ -20,7 +20,7 @@
 				else
 					local.tabelle = "/";
 
-				local.righeTabella &= "<tr><td scope='row'>#allPagine.nomePagina[local.i]#</td><td scope='row'><textarea rows='5' cols='50' readonly disabled>#local.locazione#</textarea></td><td scope='row'><textarea rows='5' cols='50' readonly disabled>#local.funzioni#</textarea></td><td scope='row'><textarea rows='5' cols='50' readonly disabled>#local.tabelle#</textarea></td><td scope = 'row'><input type='radio' name='radioModifica' value='#allPagine.pagID[local.i]#'></td><td scope = 'row'><input type='radio' name='radioElimina' value='#allPagine.pagID[local.i]#'></td></tr>";
+				local.righeTabella &= "<tr><td scope='row'>#allPagine.nomePagina[local.i]#</td><td scope='row'><textarea rows='5' cols='40' readonly disabled>#local.locazione#</textarea></td><td scope='row'><textarea rows='5' cols='40' readonly disabled>#local.funzioni#</textarea></td><td scope='row'><textarea rows='5' cols='40' readonly disabled>#local.tabelle#</textarea></td><td scope = 'row'><input type='radio' name='radioModifica' value='#allPagine.pagID[local.i]#'></td><td scope = 'row'><input type='radio' name='radioElimina' value='#allPagine.pagID[local.i]#'></td></tr>";
 			}
 			local.righeTabella &= "</tbody>";
 
