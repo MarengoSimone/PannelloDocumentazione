@@ -1,5 +1,6 @@
 <cfscript> 
 	manager = createObject("component","PannelloDocumentazione\managers\gestione_categorie");
+	navigation = createObject('component', 'PannelloDocumentazione/navigation/navigazione');
 
 	if(!isDefined("url.mode"))
 	{
@@ -37,6 +38,9 @@
 		<link rel="stylesheet" href="..\style\index.css">
 	</head>
 	<body>
+		<cfscript>
+			writeOutput(navigation.creaNavigazione());
+		</cfscript>
 		
 			<h1 class='text-center' style="margin:20px"> <cfoutput> #url.mode# Categoria: </cfoutput> </h1>
 			<cfform action="categorie.cfm?categoria=#url.categoria#" method="post">

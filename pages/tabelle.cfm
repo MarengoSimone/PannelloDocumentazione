@@ -1,6 +1,7 @@
 <cfscript>
 	manager = createObject("component","PannelloDocumentazione\managers\tabelle");
 	managerTabelle = createObject("component","PannelloDocumentazione\managers\gestione_tabelle");
+	navigation = createObject('component', 'PannelloDocumentazione/navigation/navigazione');
 
 	if(isDefined("form") && isDefined("form.BTNSUBMIT") && (#form.BTNSUBMIT# == "Aggiungi Tabella"))
 	{
@@ -30,6 +31,9 @@
 		<script src="..\script\tabelle.js"></script>
 	</head>
 	<body>
+		<cfscript>
+			writeOutput(navigation.creaNavigazione());
+		</cfscript>
 		
 			<h1 class='text-center' style="margin:20px"> <cfoutput> Elenco tabelle disponibili: </cfoutput> </h1>
 				<table class="table table-striped">

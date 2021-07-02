@@ -1,6 +1,7 @@
 <cfscript>
 	ticket = createObject("component", "PannelloDocumentazione\managers\tickets");
 	gestioneTicket = createObject("component", "PannelloDocumentazione\managers\gestione_ticket");
+	navigation = createObject('component', 'PannelloDocumentazione/navigation/navigazione');
 
 	if(isDefined("form") && isDefined("form.BTNSUBMIT") && (#form.BTNSUBMIT# == "Aggiungi Ticket"))
 	{
@@ -36,6 +37,9 @@
 		<script src="..\script\tickets.js"></script>
 	</head>
 	<body>
+		<cfscript>
+			writeOutput(navigation.creaNavigazione());
+		</cfscript>
 		
 			<h1 class='text-center' style="margin:20px"> <cfoutput> Ticket #url.categoria# disponibili: </cfoutput> </h1>
 				<table class="table table-striped">

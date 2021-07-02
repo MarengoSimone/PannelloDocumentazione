@@ -14,7 +14,7 @@ window.onload = function(){
 	}
 
 function bottoniModifica(){
-		_ambienteModifica.innerHTML = `<a href='index.cfm'>  <button class='btn btn-warning'> Indietro</button> </a>
+		_ambienteModifica.innerHTML = `
 		<a href='gestione_categorie.cfm?mode=Aggiungi&categoria=categoria'>  <button class='btn btn-primary'> Aggiungi Categoria</button> </a>
 		<a href='gestione_categorie.cfm?mode=Aggiorna&categoria=${this.value}'>  <button class='btn btn-info' id='btnAggiorna'> Aggiorna Categoria</button> </a>`
 
@@ -27,7 +27,7 @@ function bottoniModifica(){
 }
 
 function bottoniElimina(){
-		_ambienteModifica.innerHTML = `<a href='index.cfm'>  <button class='btn btn-warning'> Indietro</button> </a>
+		_ambienteModifica.innerHTML = `
 		<a href='gestione_categorie.cfm?mode=Aggiungi&categoria=categoria'>  <button class='btn btn-primary'> Aggiungi Categoria</button> </a>
 		<a href='gestione_categorie.cfm?mode=Elimina&categoria=${this.value}'>  <button class='btn btn-danger' id='btnElimina'>Elimina Categoria</button> </a`
 

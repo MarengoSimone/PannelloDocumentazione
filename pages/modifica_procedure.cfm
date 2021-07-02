@@ -1,5 +1,6 @@
 <cfscript>
 	manager = createObject('component', "PannelloDocumentazione/managers/modifica_procedure");
+	navigation = createObject('component', 'PannelloDocumentazione/navigation/navigazione');
 	if(!isDefined("url.tipo")){
 		cflocation( url="procedure.cfm" );
 	}
@@ -21,6 +22,9 @@
 		<link rel="stylesheet" href="..\style\index.css">
 	</head>
 	<body>
+		<cfscript>
+			writeOutput(navigation.creaNavigazione());
+		</cfscript>
 		<cfform action="procedure.cfm" method="post">
 			<h1 class='text-center' style="margin:20px">PROCEDURE:</h1>
 			<table class="table table-striped">
