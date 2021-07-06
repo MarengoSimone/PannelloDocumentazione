@@ -1,6 +1,7 @@
 <cfcomponent>
 	<cfscript>
 		managerDB = createObject('component', "PannelloDocumentazione/managersDB/DB_modifica_ambienti");
+		managerCSV = createObject('component', "PannelloDocumentazione/managersCSV/CSV_modifica_ambienti");
 
 		public string function creaContenutoTabella(tipo, ambiente){
 			if(tipo == "aggiungi"){
@@ -24,7 +25,8 @@
 		}
 
 		public string function tabellaElimina(ambiente){
-			allAmbientiAmbiente = managerDB.getAllAmbientiAmbiente(ambiente);
+			//allAmbientiAmbiente = managerDB.getAllAmbientiAmbiente(ambiente);
+			allAmbientiAmbiente = managerCSV.getAllAmbientiAmbiente(ambiente);
 			return "<tbody>
 					<td scope='row'><input type='text' name='txtAmbiente' value='#allAmbientiAmbiente.ambiente#' readonly></td>
 					<td scope='row'><input type='text' name='txtPortale' value='#allAmbientiAmbiente.portale#' readonly></td>
@@ -37,7 +39,8 @@
 		}
 
 		public string function tabellaModifica(ambiente){
-			allAmbientiAmbiente = managerDB.getAllAmbientiAmbiente(ambiente);
+			//allAmbientiAmbiente = managerDB.getAllAmbientiAmbiente(ambiente);
+			allAmbientiAmbiente = managerCSV.getAllAmbientiAmbiente(ambiente);
 			return "<tbody>
 					<td scope='row'><input type='text' name='txtAmbiente' value='#allAmbientiAmbiente.ambiente#' readonly></td>
 					<td scope='row'><input type='text' name='txtPortale' value='#allAmbientiAmbiente.portale#'></td>
