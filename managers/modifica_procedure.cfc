@@ -1,6 +1,8 @@
 <cfcomponent>
 	<cfscript>
 		managerDB = createObject('component', "PannelloDocumentazione/managersDB/DB_modifica_procedure");
+		managerCSV = createObject('component', "PannelloDocumentazione/managersCSV/CSV_modifica_procedure");
+
 		public string function scriviTabella(tipo, procedureID){
 			if(tipo == "aggiungi"){
 				return tabellaAggiungi();
@@ -20,7 +22,8 @@
 		}
 
 		public string function tabellaModifica(procedureID){
-			allProcedureProcedureID = managerDB.getAllProcedureProcedureID(procedureID);
+			//allProcedureProcedureID = managerDB.getAllProcedureProcedureID(procedureID);
+			allProcedureProcedureID = managerCSV.getAllProcedureProcedureID(procedureID);
 			return "<tbody>
 					<td scope='row'><input type='text' name='txtNomeProcedura' value='#allProcedureProcedureID.nomeProcedura#' required></td>
 					<td scope='row'><textarea name='txtDescrizione' cols='60'>#allProcedureProcedureID.descrizione#</textarea></td>
@@ -30,7 +33,8 @@
 		}
 
 		public string function tabellaElimina(procedureID){
-			allProcedureProcedureID = managerDB.getAllProcedureProcedureID(procedureID);
+			//allProcedureProcedureID = managerDB.getAllProcedureProcedureID(procedureID);
+			allProcedureProcedureID = managerCSV.getAllProcedureProcedureID(procedureID);
 			return "<tbody>
 					<td scope='row'><input type='text' name='txtNomeProcedura' value='#allProcedureProcedureID.nomeProcedura#' readonly></td>
 					<td scope='row'><textarea name='txtDescrizione' rows='5' cols='60' readonly disabled>#allProcedureProcedureID.descrizione#</textarea></td>
