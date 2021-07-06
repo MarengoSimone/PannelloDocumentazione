@@ -1,6 +1,6 @@
 nomeTicket-descrizione-problemi-test-installazione-categoria-
 Conad1-Gestisce sede 1 Conad-Nessun problema rilevato-Test eseguito-Vedere file install-Conad-
-Coop3-Gestisce sede 3 Coop-Mancano dei dati-Test non eseguito-Vedere file install.bat-Coop-
+ Coop3 - Gestisce sede 3 Coop - Mancano dei dati - Test eseguito - Vedere file install.bat -Coop-
 GDO-Aggiorna dati GDO-Problema in update-Test non eseguito-Vedere file install.js-GDO-
 GDOES_TR-Gestisce trasporto merci-Nessun problema rilevato-Test funzionante-Vedere file install.js-GDO ES-
 Port32-Gestisce comunicazione interna-Nessun problema rilevato-Test funzionante-Vedere file install-Porting-
