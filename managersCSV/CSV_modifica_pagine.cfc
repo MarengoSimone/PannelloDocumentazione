@@ -1,17 +1,17 @@
 <cfcomponent>
 	<cfscript>
-			public any function getAllAmbientiAmbiente(ambiente){
-				queryAmbienti = queryNew("ambiente, portale, administrator, utils, proced, versione", "varchar, varchar, varchar, varchar, varchar, varchar");
-				fo = fileOpen("C:\ColdFusion2016\PannelloDocumentazione\wwwroot\PannelloDocumentazione\fileCSV\ambienti.csv");
+			public any function getAllPaginePagID(pagid){
+				queryPagine = queryNew("nomePagina, loc, funzioni, tabelle, pagID", "varchar, varchar, varchar, varchar, Integer");
+				fo = fileOpen("C:\ColdFusion2016\PannelloDocumentazione\wwwroot\PannelloDocumentazione\fileCSV\pagine.csv");
 				while(!fileIsEOF(fo)){
 					riga = fileReadLine(fo);
 					rigaArray = listToArray(riga, '-', false, false);
-					if(rigaArray[1] != "ambiente" and rigaArray[1] == "#ambiente#"){
-						queryAddRow(queryAmbienti, {"ambiente" = rigaArray[1], "portale" = rigaArray[2], "administrator" = rigaArray[3], "utils" = rigaArray[4], "proced" = rigaArray[5], "versione" = rigaArray[6]});
+					if(rigaArray[1] != "nomePagina" and rigaArray[5] == "#pagid#"){
+						queryAddRow(queryPagine, {"nomePagina" = rigaArray[1], "loc" = rigaArray[2], "funzioni" = rigaArray[3], "tabelle" = rigaArray[4], "pagID" = rigaArray[5]});
 					}
 				}
 
-				return queryAmbienti;
+				return queryPagine;
 			}
 	</cfscript>
 </cfcomponent>

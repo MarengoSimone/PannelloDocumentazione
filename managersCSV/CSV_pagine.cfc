@@ -15,76 +15,99 @@
 			}
 
 			public any function aggiungiFormCSV(form){
-				fr = fileOpen("C:\ColdFusion2016\PannelloDocumentazione\wwwroot\PannelloDocumentazione\fileCSV\ambienti.csv");
+				fr = fileOpen("C:\ColdFusion2016\PannelloDocumentazione\wwwroot\PannelloDocumentazione\fileCSV\pagine.csv");
 				daScrivere = "";
+				local.lunghezza = -1;
 				while(!fileIsEOF(fr)){
 					riga = fileReadLine(fr);
 					daScrivere &= "#riga#" & chr(10);
+					local.lunghezza++;
 				}
 
-				if(form.txtPortale == "")
-					local.portale = "/";
+				if(form.txtNomePagina == "")
+					local.nomePagina = "/";
 				else
-					local.portale = form.txtPortale;
+					local.nomePagina = form.txtNomePagina;
 
-				if(form.txtAdministrator == "")
-					local.administrator = "/";
+				if(form.txtLocazione == "")
+					local.locazione = "/";
 				else
-					local.administrator = form.txtAdministrator;
+					local.locazione = form.txtLocazione;
 
-				if(form.txtUtils == "")
-					local.utils = "/";
+				if(form.txtFunzioni == "")
+					local.funzioni = "/";
 				else
-					local.utils = form.txtUtils;
+					local.funzioni = form.txtFunzioni;
 
-				if(form.txtProcedura == "")
-					local.procedura = "/";
+				if(form.txtTabelle == "")
+					local.tabelle = "/";
 				else
-					local.procedura = form.txtProcedura;
+					local.tabelle = form.txtTabelle;
 
-				if(form.txtVersione == "")
-					local.versione = "/";
-				else
-					local.versione = form.txtVersione;
+				local.pagID = local.lunghezza + 1;
 
 
-				daScrivere &= "#form.txtAmbiente#-#local.portale#-#local.administrator#-#local.utils#-#local.procedura#-#local.versione#";
+				daScrivere &= "#local.nomePagina#-#local.locazione#-#local.funzioni#-#local.tabelle#-#local.pagID#";
+				writeDump(daScrivere);
 				fileClose(fr);
-				fw = fileOpen("C:\ColdFusion2016\PannelloDocumentazione\wwwroot\PannelloDocumentazione\fileCSV\ambienti.csv", "write");
+				fw = fileOpen("C:\ColdFusion2016\PannelloDocumentazione\wwwroot\PannelloDocumentazione\fileCSV\pagine.csv", "write");
 				fileWrite(fw, daScrivere);
 				fileClose(fw);
 			}
 
 			public any function modificaFormCSV(form){
-				fr = fileOpen("C:\ColdFusion2016\PannelloDocumentazione\wwwroot\PannelloDocumentazione\fileCSV\ambienti.csv");
+				fr = fileOpen("C:\ColdFusion2016\PannelloDocumentazione\wwwroot\PannelloDocumentazione\fileCSV\pagine.csv");
 				daScrivere = "";
 				while(!fileIsEOF(fr)){
 					riga = fileReadLine(fr);
 					rigaArray = listToArray(riga, '-', false, false);
-					if(rigaArray[1] == "ambiente" or rigaArray[1] != "#form.txtAmbiente#"){
+					if(rigaArray[1] == "nomePagina" or rigaArray[5] != "#form.txtPagID#"){
 						daScrivere &= "#riga#" & chr(10);
 					}else{
-						daScrivere &= "#form.txtAmbiente#-#form.txtPortale#-#form.txtAdministrator#-#form.txtUtils#-#form.txtProcedura#-#form.txtVersione#" & chr(10);
+
+					if(form.txtNomePagina == "")
+						local.nomePagina = "/";
+					else
+						local.nomePagina = form.txtNomePagina;
+
+					if(form.txtLocazione == "")
+						local.locazione = "/";
+					else
+						local.locazione = form.txtLocazione;
+
+					if(form.txtFunzioni == "")
+						local.funzioni = "/";
+					else
+						local.funzioni = form.txtFunzioni;
+
+					if(form.txtTabelle == "")
+						local.tabelle = "/";
+					else
+						local.tabelle = form.txtTabelle;
+
+					local.pagID = form.txtPagID;
+
+						daScrivere &= "#local.nomePagina#-#local.locazione#-#local.funzioni#-#local.tabelle#-#local.pagID#" & chr(10);
 					}
 				}
 				fileClose(fr);
-				fw = fileOpen("C:\ColdFusion2016\PannelloDocumentazione\wwwroot\PannelloDocumentazione\fileCSV\ambienti.csv", "write");
+				fw = fileOpen("C:\ColdFusion2016\PannelloDocumentazione\wwwroot\PannelloDocumentazione\fileCSV\pagine.csv", "write");
 				fileWrite(fw, daScrivere);
 				fileClose(fw);				
 			}
 
 			public any function eliminaFormCSV(form){
-				fr = fileOpen("C:\ColdFusion2016\PannelloDocumentazione\wwwroot\PannelloDocumentazione\fileCSV\ambienti.csv");
+				fr = fileOpen("C:\ColdFusion2016\PannelloDocumentazione\wwwroot\PannelloDocumentazione\fileCSV\pagine.csv");
 				daScrivere = "";
 				while(!fileIsEOF(fr)){
 					riga = fileReadLine(fr);
 					rigaArray = listToArray(riga, '-', false, false);
-					if(rigaArray[1] == "ambiente" or rigaArray[1] != "#form.txtAmbiente#"){
+					if(rigaArray[1] == "nomePagina" or rigaArray[5] != "#form.txtPagID#"){
 						daScrivere &= "#riga#" & chr(10);
 					}
 				}
 				fileClose(fr);
-				fw = fileOpen("C:\ColdFusion2016\PannelloDocumentazione\wwwroot\PannelloDocumentazione\fileCSV\ambienti.csv", "write");
+				fw = fileOpen("C:\ColdFusion2016\PannelloDocumentazione\wwwroot\PannelloDocumentazione\fileCSV\pagine.csv", "write");
 				fileWrite(fw, daScrivere);
 				fileClose(fw);	
 			}

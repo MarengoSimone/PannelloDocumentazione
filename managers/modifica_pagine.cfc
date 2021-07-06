@@ -1,6 +1,7 @@
 <cfcomponent>
 	<cfscript>
 		managerDB = createObject('component', "PannelloDocumentazione/managersDB/DB_modifica_pagine");
+		managerCSV = createObject('component', "PannelloDocumentazione/managersCSV/CSV_modifica_pagine");
 		public string function scriviTabella(tipo, pagid){
 			if(tipo == "aggiungi"){
 				return tabellaAggiungi();
@@ -21,7 +22,8 @@
 		}
 
 		public string function tabellaModifca(pagid){
-			allPaginePagID = managerDB.getAllPaginePagID(pagid);
+			//allPaginePagID = managerDB.getAllPaginePagID(pagid);
+			allPaginePagID = managerCSV.getAllPaginePagID(pagid);
 			return "<tbody>
 					<td scope='row'><input type='text' name='txtNomePagina' value='#allPaginePagID.nomePagina#' required></td>
 					<td scope='row'><textarea name='txtLocazione' cols='40'>#allPaginePagID.loc#</textarea></td>
@@ -32,7 +34,8 @@
 		}
 
 		public string function tabellaElimina(pagid){
-			allPaginePagID = managerDB.getAllPaginePagID(pagid);
+			//allPaginePagID = managerDB.getAllPaginePagID(pagid);
+			allPaginePagID = managerCSV.getAllPaginePagID(pagid);
 			return "<tbody>
 					<td scope='row'><input type='text' name='txtNomePagina' value='#allPaginePagID.nomePagina#' readonly></td>
 					<td scope='row'><textarea name='txtLocazione' cols='40' readonly disabled>#allPaginePagID.loc#</textarea></td>

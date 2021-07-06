@@ -32,11 +32,14 @@
 
 		public void function controlloForm(form){
 			if(isDefined("form") && isDefined("form.btnAggiungiPagina") && form.btnAggiungiPagina == "Aggiungi Pagina"){
-				managerDB.aggiungiFormDB(form);
+				//managerDB.aggiungiFormDB(form);
+				managerCSV.aggiungiFormCSV(form);
 			}else if(isDefined("form") && isDefined("form.btnModificaPagina") && form.btnModificaPagina == "Aggiorna Pagina"){
-				managerDB.updateFormDB(form);
+				//managerDB.updateFormDB(form);
+				managerCSV.modificaFormCSV(form);
 			}else if(isDefined("form") && isDefined("form.btnEliminaPagina") && form.btnEliminaPagina == "Elimina Pagina"){
-				managerDB.eliminaFormDB(form);
+				//managerDB.eliminaFormDB(form);
+				managerCSV.eliminaFormCSV(form);
 			}
 		}
 	</cfscript>
