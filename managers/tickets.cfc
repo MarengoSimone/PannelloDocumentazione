@@ -3,6 +3,9 @@
 		public any function creaRighe(categoria){
 			ticketDB = createObject("component", "PannelloDocumentazione\managersDB\DB_tickets");
 			categorieDB = createObject("component", "PannelloDocumentazione\managersDB\DB_categorie");
+			ticketCSV = createObject("component", "PannelloDocumentazione\managersCSV\CSV_tickets");
+			categorieCSV = createObject("component", "PannelloDocumentazione\managersCSV\CSV_categorie");
+			
 			categorie = categorieDB.queryCategorie();
 
 			cont = 0;

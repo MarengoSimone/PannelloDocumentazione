@@ -1,8 +1,10 @@
 <cfcomponent>
 	<cfscript>
 		categDB = createObject("component", "PannelloDocumentazione\managersDB\DB_categorie");
+		categCSV = createObject("component", "PannelloDocumentazione\managersCSV\CSV_categorie");
+
 		public any function creaRighe(){
-			categorie = categDB.queryCategorie();
+			categorie = categCSV.queryCategorie();
 			app = " ";
 			for(i=1;i<=categorie.recordCount;i++)
 			{	
