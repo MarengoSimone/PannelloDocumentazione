@@ -6,7 +6,7 @@
 			ticketCSV = createObject("component", "PannelloDocumentazione\managersCSV\CSV_tickets");
 			categorieCSV = createObject("component", "PannelloDocumentazione\managersCSV\CSV_categorie");
 			
-			categorie = categorieDB.queryCategorie();
+			categorie = categorieCSV.queryCategorie();
 
 			cont = 0;
 			for(i=1;i<=categorie.recordCount;i++)
@@ -16,7 +16,7 @@
 			}
 			if(cont > 0 && categoria!="")
 			{
-				tickets = ticketDB.queryTickets(#categoria#);
+				tickets = ticketCSV.queryTickets(#categoria#);
 				app = " ";
 				for(i=1;i<=tickets.recordCount;i++)
 				{	
