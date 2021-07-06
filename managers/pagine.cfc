@@ -1,8 +1,11 @@
 <cfcomponent>
 	<cfscript>
 		managerDB = createObject('component', "PannelloDocumentazione/managersDB/DB_pagine");
+		managerCSV = createObject('component', "PannelloDocumentazione/managersCSV/CSV_pagine");
+
 		public string function scriviTabella(){
-			allPagine = managerDB.getAllPagine();
+			//allPagine = managerDB.getAllPagine();
+			allPagine = managerCSV.getAllPagine();
 			local.righeTabella = "<tbody>";
 			for(local.i = 1; local.i <= allPagine.recordCount; local.i++){
 				if(allPagine.loc[local.i] != "")
