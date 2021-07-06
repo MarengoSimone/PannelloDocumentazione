@@ -1,11 +1,12 @@
 <cfcomponent>
 	<cfscript>
 	managerDB = createObject('component', "PannelloDocumentazione/managersDB/DB_ambienti");
+	managerCSV = createObject('component', "PannelloDocumentazione/managersCSV/CSV_ambienti");
 
 		public string function scriviElementiTabella(){
-			allAmbienti = managerDB.getAllAmbienti();
+			//allAmbienti = managerDB.getAllAmbienti();
+			allAmbienti = managerCSV.getAllAmbienti();
 			local.contenuto = "<tbody>";
-			//writeDump(allAmbienti);
 
 			for(local.idx = 1; local.idx <= allAmbienti.recordCount; local.idx++){
 				if(#allAmbienti.portale[local.idx]# != ""){
@@ -33,7 +34,7 @@
 				}
 
 				if(#allAmbienti.versione[local.idx]# != ""){
-					versione = "#allAmbienti.versione#";
+					versione = "#allAmbienti.versione[local.idx]#";
 				}else{
 					versione = "/";
 				}
@@ -65,11 +66,14 @@
 
 		public void function controlloForm(form){
 			if(isDefined("form") && isDefined("form.btnAggiungiAmbiente") && form.btnAggiungiAmbiente == "Aggiungi Ambiente"){
-				managerDB.aggiungiFormDB(form);
+				//managerDB.aggiungiFormDB(form);
+				managerCSV.aggiungiFormCSV(form);
 			}else if(isDefined("form") && isDefined("form.btnModificaAmbiente") && form.btnModificaAmbiente == "Aggiorna Ambiente"){
-				managerDB.modificaFormDB(form);
+				//managerDB.modificaFormDB(form);
+				managerCSV.modificaFormCSV(form);
 			}else if(isDefined("form") && isDefined("form.btnEliminaAmbiente") && form.btnEliminaAmbiente == "Elimina Ambiente"){
-				managerDB.eliminaFormDB(form);
+				//managerDB.eliminaFormDB(form);
+				managerCSV.eliminaFormCSV(form);
 			}
 		}
 
