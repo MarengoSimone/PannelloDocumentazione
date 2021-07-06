@@ -9,36 +9,27 @@
 			local.contenuto = "<tbody>";
 
 			for(local.idx = 1; local.idx <= allAmbienti.recordCount; local.idx++){
-				if(#allAmbienti.portale[local.idx]# != ""){
+				if(#allAmbienti.portale[local.idx]# != "/"){
 					linkPortale = "<a href='#allAmbienti.portale[local.idx]#'>go</a>";
-				}else{
-					linkPortale = "/";
-				}
+				}else
+					linkPortale = allAmbienti.portale[local.idx];
 
-				if(#allAmbienti.administrator[local.idx]# != ""){
+				if(#allAmbienti.administrator[local.idx]# != "/"){
 					linkAdministrator = "<a href='#allAmbienti.administrator[local.idx]#'>go</a>";
-				}else{
-					linkAdministrator = "/";
-				}
+				}else
+					linkAdministrator = allAmbienti.administrator[local.idx];
 
-				if(#allAmbienti.utils[local.idx]# != ""){
+				if(#allAmbienti.utils[local.idx]# != "/"){
 					linksUtils = linkUtils(local.idx, allAmbienti);
-				}else{
-					linksUtils = "/";
-				}
+				}else
+					linksUtils = allAmbienti.utils[local.idx];
 
-				if(#allAmbienti.proced[local.idx]# != ""){
+				if(#allAmbienti.proced[local.idx]# != "/"){
 					linksProcedure = linkProcedure(local.idx, allAmbienti);
-				}else{
-					linksProcedure = "/";
-				}
+				}else
+					linksProcedure = allAmbienti.proced[local.idx];
 
-				if(#allAmbienti.versione[local.idx]# != ""){
-					versione = "#allAmbienti.versione[local.idx]#";
-				}else{
-					versione = "/";
-				}
-				local.contenuto &= "<tr><td scope = 'row'>#allAmbienti.ambiente[local.idx]#</td><td scope = 'row'>#linkPortale#</td><td scope = 'row'>#linkAdministrator#</td><td scope = 'row'>#linksUtils#</td><td scope = 'row'>#linksProcedure#</td><td scope = 'row'>#versione#</td><td scope = 'row'><input type='radio' name='radioModifica' value='#allAmbienti.ambiente[local.idx]#'></td><td scope = 'row'><input type='radio' name='radioElimina' value='#allAmbienti.ambiente[local.idx]#'></td></tr>";
+				local.contenuto &= "<tr><td scope = 'row'>#allAmbienti.ambiente[local.idx]#</td><td scope = 'row'>#linkPortale#</td><td scope = 'row'>#linkAdministrator#</td><td scope = 'row'>#linksUtils#</td><td scope = 'row'>#linksProcedure#</td><td scope = 'row'>#allAmbienti.versione[local.idx]#</td><td scope = 'row'><input type='radio' name='radioModifica' value='#allAmbienti.ambiente[local.idx]#'></td><td scope = 'row'><input type='radio' name='radioElimina' value='#allAmbienti.ambiente[local.idx]#'></td></tr>";
 			}
 			local.contenuto &= "</tbody>";
 			return local.contenuto;
