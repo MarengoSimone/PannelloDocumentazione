@@ -10,7 +10,7 @@
 	{
 		cflocation( url="tabelle.cfm" );
 	}
-	else if((#url.mode# != "Aggiorna" && #url.mode# != "Aggiungi" && #url.mode# != "Elimina"))
+	else if((#url.mode# != "Aggiorna" && #url.mode# != "Aggiungi" && #url.mode# != "Elimina" && #url.mode# != "Export"))
 	{
 		cflocation( url="tabelle.cfm" );
 	}
@@ -18,6 +18,10 @@
 	if(#url.mode# == "Aggiungi")
 	{
 		url.id = 0;
+	}
+	else if(#url.mode# == "Export")
+	{
+		gestioneTabelle.exportTabella();
 	}
 </cfscript>
 

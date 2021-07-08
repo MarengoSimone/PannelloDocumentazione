@@ -39,6 +39,20 @@
 
 		public void function deleteTabella(id){
 			gestioneDB.deleteTabella(id);
+		}
+
+		public void function exportTabella(){
+			tabelle = gestioneDB.queryTabelle();
+			app = "nomeTabella-funzionalita-pagineUtilizzo-descrizione-" & chr(10);
+
+			for(i=1;i<=tabelle.recordCount;i++)
+			{
+				app &= "#tabelle.nomeTabella[i]#-#tabelle.funzionalita[i]#-#tabelle.pagineUtilizzo[i]#-#tabelle.descrizione[i]#-" & chr(10);
+			}
+			fw = fileOpen("C:\ColdFusion2016\PannelloDocumentazione\wwwroot\PannelloDocumentazione\fileCSV\ListaTabelle.csv", "write");
+			fileWrite(fw, app);
+			fileClose(fw);	
+			cflocation( url="tabelle.cfm" );
 		}					
 	</cfscript>
 </cfcomponent>

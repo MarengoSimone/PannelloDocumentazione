@@ -8,7 +8,7 @@
 			app = " ";
 			for(i=1;i<=categorie.recordCount;i++)
 			{	
-				app &= "<tr> <th scope='row'> <a href='tickets.cfm?categoria=#categorie.nomeCategoria[i]#'> #categorie.nomeCategoria[i]# </a> </th> <th> <input type='radio' name='rdbModifica' value='#categorie.nomeCategoria[i]#' id='#categorie.idCategoria[i]#'></td> <td><input type='radio' name='rdbElimina' value='#categorie.nomeCategoria[i]#' id='#categorie.idCategoria[i]#'></td></tr>";
+				app &= "<tr> <th scope='row'> <a href='tickets.cfm?categoria=#categorie.nomeCategoria[i]#'> #categorie.nomeCategoria[i]# </a> </th> <td><input type='radio' name='rdbElimina' value='#categorie.nomeCategoria[i]#' id='#categorie.idCategoria[i]#'></td></tr>";
 			}
 			return app;
 		}

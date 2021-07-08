@@ -16,6 +16,14 @@
 			);
 		}
 
+		public any function queryTabelle(){
+			return QueryExecute(
+			"select * from ListaTabelle",
+			{},
+			{datasource = "qa_tirocinioDev"}
+			);
+		}
+
 		public any function updateTabella(form,id){
 			return QueryExecute(
 			"update ListaTabelle set nomeTabella='#form.txtNome#', funzionalita='#form.txtFunzionalita#', pagineUtilizzo= '#form.txtPagine#', descrizione = '#form.txtDescrizione#' where tabId=#id# ",

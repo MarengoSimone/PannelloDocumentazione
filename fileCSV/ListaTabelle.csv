@@ -1,2 +1,3 @@
-tabId-nomeTabella-funzionalita-pagineUtilizzo-descrizione
-5-   Categorie   -   Visualizzazione e modifica   -  categorie.cfm;categorie.cfc   -   Gestione delle2 Categorie   -
+nomeTabella-funzionalita-pagineUtilizzo-descrizione-
+ Categorie    - Visualizzazione,modifica e lettura    - categorie.cfm;categorie.cfc    - Gestione delle Categorie-
+ Ticket - Gestione Ticket per categoria  -ticket.cfm;gestione_ticket.cfm - La tabella funziona correttamente  -

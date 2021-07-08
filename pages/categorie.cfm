@@ -41,7 +41,7 @@
 				  <thead>
 				    <tr>
 				      <th scope="col">Categoria</th>
-				      <th scope="col">Modifica</th>
+				 <!---      <th scope="col">Modifica</th> --->
 					  <th scope="col">Elimina</th>
 				    </tr>
 				  </thead>

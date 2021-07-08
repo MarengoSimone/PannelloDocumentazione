@@ -60,5 +60,6 @@
 						writeOutput(manager.generaPulsanti());
 					</cfscript>
 				</div>
+				<a href='gestione_tabelle.cfm?mode=Export&id=0'>  <button class='btn btn-success'>Esporta in file CSV</button> </a>
 	</body>
 </html>
