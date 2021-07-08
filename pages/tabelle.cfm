@@ -54,7 +54,7 @@
 					  		</cfscript>
 					  </tbody>
 				</table>
-
+				
 				<div id="buttons">
 					<cfscript>
 						writeOutput(manager.generaPulsanti());

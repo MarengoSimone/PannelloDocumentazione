@@ -56,6 +56,7 @@
 				  		</cfscript>
 				  </tbody>
 			</table>
+				<a href='tabelle.cfm'>  <button class='btn btn-warning'> Indietro </button> </a>
 				<input class='btn btn-primary' type='submit' name='btnSubmit' value='<cfoutput>#url.mode# Tabella</cfoutput>' style='margin:10px;'> </input>
 			</cfform>
 	</body>

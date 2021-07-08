@@ -18,7 +18,7 @@
 
 		public any function updateTabella(form,id){
 			return QueryExecute(
-			"update ListaTabelle set funzionalita='#form.txtFunzionalita#', pagineUtilizzo= '#form.txtPagine#', descrizione = '#form.txtDescrizione#' where tabId=#id# ",
+			"update ListaTabelle set nomeTabella='#form.txtNome#', funzionalita='#form.txtFunzionalita#', pagineUtilizzo= '#form.txtPagine#', descrizione = '#form.txtDescrizione#' where tabId=#id# ",
 			{},
 			{datasource = "qa_tirocinioDev"}
 			);

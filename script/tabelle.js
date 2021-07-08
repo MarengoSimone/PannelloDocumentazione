@@ -15,7 +15,7 @@ window.onload = function(){
 
 	function bottoniModifica(){
 			let id = document.getElementsByClassName("id")[0];
-			_ambienteModifica.innerHTML = `
+			_ambienteModifica.innerHTML = ` <a href='index.cfm'>  <button class='btn btn-warning'> Indietro </button> </a>
 			<a href='gestione_tabelle.cfm?mode=Aggiungi&id=${this.value}'>  <button class='btn btn-primary'> Aggiungi Tabella</button> </a>
 			<a href='gestione_tabelle.cfm?mode=Aggiorna&id=${this.value}'>  <button class='btn btn-info' id='btnAggiorna'> Aggiorna Tabella</button> </a>`
 
@@ -26,6 +26,7 @@ window.onload = function(){
 
 	function bottoniElimina(){
 			_ambienteModifica.innerHTML = `
+			<a href='index.cfm'>  <button class='btn btn-warning'> Indietro </button> </a>
 			<a href='gestione_tabelle.cfm?mode=Aggiungi&id=${this.value}'>  <button class='btn btn-primary'> Aggiungi Tabella</button> </a>
 			<a href='gestione_tabelle.cfm?mode=Elimina&id=${this.value}'>  <button class='btn btn-danger' id='btnElimina'>Elimina Tabella </button> </a`
 

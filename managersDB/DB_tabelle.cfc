@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-  
->>>>>>> master
 <cfcomponent>
 	<cfscript>
 		public any function queryTabelle(){
