@@ -9,7 +9,7 @@
 	}
 	else if (isDefined("form") && isDefined("form.BTNSUBMIT") && (#form.BTNSUBMIT# == "Aggiorna Ticket"))
 	{
-		gestioneTicket.updateTicket(form,url.categoria);
+		gestioneTicket.updateTicket(form,url.nome);
 	}
 	else if (isDefined("form") && isDefined("form.BTNSUBMIT") && (#form.BTNSUBMIT# == "Elimina Ticket"))
 	{

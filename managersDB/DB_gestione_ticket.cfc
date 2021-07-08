@@ -8,25 +8,25 @@
 			);
 		}
 
-		public any function getTicket(nome){
+		public any function getTicket(id){
 			return QueryExecute(
-			"select * from Tickets where nomeTicket='#nome#'",
+			"select * from Tickets where idTicket=#id#",
 			{},
 			{datasource = "qa_tirocinioDev"}
 			);
 		}
 
-		public any function updateTicket(form,nome){
+		public any function updateTicket(form,id){
 			return QueryExecute(
-			"update Tickets set descrizione='#form.txtDescrizione#',problemi='#form.txtProblemi#', test= '#form.txtTest#', installazione = '#form.txtInstallazione#' where categoria='#categoria#' and nomeTicket='#nome#' ",
+			"update Tickets set nomeTicket = '#form.txtNome#', descrizione='#form.txtDescrizione#',problemi='#form.txtProblemi#', test= '#form.txtTest#', installazione = '#form.txtInstallazione#' where idTicket=#id# ",
 			{},
 			{datasource = "qa_tirocinioDev"}
 			);
 		}
 
-		public any function deleteTicket(form,nome){
-			QueryExecute(
-			"delete from Tickets where nomeTicket='#nome#'",
+		public any function deleteTicket(form,id){
+			return QueryExecute(
+			"delete from Tickets where idTicket=#id#",
 			{},
 			{datasource = "qa_tirocinioDev"}
 			);

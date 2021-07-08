@@ -6,21 +6,13 @@
 			ticketCSV = createObject("component", "PannelloDocumentazione\managersCSV\CSV_tickets");
 			categorieCSV = createObject("component", "PannelloDocumentazione\managersCSV\CSV_categorie");
 			
-			categorie = categorieCSV.queryCategorie();
-
-			cont = 0;
-			for(i=1;i<=categorie.recordCount;i++)
+			if(categoria!="")
 			{
-				if(#categorie.nomeCategoria[i]# == #categoria#)
-					cont++;
-			}
-			if(cont > 0 && categoria!="")
-			{
-				tickets = ticketCSV.queryTickets(#categoria#);
+				tickets = ticketDB.queryTickets(#categoria#);
 				app = " ";
 				for(i=1;i<=tickets.recordCount;i++)
 				{	
-					app &= "<tr> <input class='categoria' type='hidden'value='#categoria#'> </input> <td>#tickets.nomeTicket[i]#</td> <td><textarea readonly>#tickets.descrizione[i]# </textarea> </td> <td> <textarea readonyl> #tickets.problemi[i]# </textarea> </td> <td> <textarea readonly>#tickets.test[i]# </textarea> </td> <td> <textarea readonly> #tickets.installazione[i]# </textarea> </td> <td><input type='radio' name='rdbModifica' value='#tickets.nomeTicket[i]#'></td> <td><input type='radio' name='rdbElimina' value='#tickets.nomeTicket[i]#'></td> </tr>";
+					app &= "<tr> <input name='index' class='categoria' type='hidden' value='#categoria#' id='#tickets.idTicket[i]#'> </input> <td>#tickets.nomeTicket[i]#</td> <td><textarea readonly>#tickets.descrizione[i]# </textarea> </td> <td> <textarea readonly> #tickets.problemi[i]# </textarea> </td> <td> <textarea readonly>#tickets.test[i]# </textarea> </td> <td> <textarea readonly> #tickets.installazione[i]# </textarea> </td> <td><input type='radio' name='rdbModifica' value='#tickets.idTicket[i]#'></td> <td><input type='radio' name='rdbElimina' value=#tickets.idTicket[i]#></td> </tr>";
 				}
 				return app;
 			}
@@ -33,7 +25,7 @@
 
 		public any function generaPulsanti(categoria){
 			return "<a href='categorie.cfm'>  <button class='btn btn-warning'> Indietro</button> </a>
-				<a href='gestione_ticket.cfm?mode=Aggiungi&categoria=#categoria#&nome='no''>  <button class='btn btn-primary'> Aggiungi Ticket</button> </a>";
+				<a href='gestione_ticket.cfm?mode=Aggiungi&categoria=#categoria#&nome=&id=0'>  <button class='btn btn-primary'> Aggiungi Ticket</button> </a>";
 		}
 	</cfscript>
 </cfcomponent>
