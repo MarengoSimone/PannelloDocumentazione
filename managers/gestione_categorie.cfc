@@ -5,15 +5,15 @@
 		categCSV = createObject("component", "PannelloDocumentazione\managersCSV\CSV_gestione_categorie");
 
 		public void function uploadCategoria(form){
-			categCSV.uploadCategoria(#form.txtCategoria#);
+			categDB.uploadCategoria(#form.txtCategoria#);
 		}	
 
-		public void function updateCategoria(form,categoria){
-			categCSV.updateCategoria(form,categoria);
+		public void function updateCategoria(form,id){
+			categDB.updateCategoria(form,id);
 		}	
 
-		public void function deleteCategoria(categoria){
-			categCSV.deleteCategoria(categoria);
+		public void function deleteCategoria(id){
+			categDB.deleteCategoria(id);
 		}		
 	</cfscript>
 </cfcomponent>

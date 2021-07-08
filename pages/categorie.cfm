@@ -9,11 +9,11 @@
 	}
 	else if (isDefined("form") && isDefined("form.BTNSUBMIT") && (#form.BTNSUBMIT# == "Aggiorna Categoria"))
 	{
-		categ.updateCategoria(form,url.categoria);
+		categ.updateCategoria(form,url.id);
 	}
 	else if (isDefined("form") && isDefined("form.BTNSUBMIT") && (#form.BTNSUBMIT# == "Elimina Categoria"))
 	{
-		categ.deleteCategoria(#url.categoria#);
+		categ.deleteCategoria(url.id);
 	}
 </cfscript>
 
