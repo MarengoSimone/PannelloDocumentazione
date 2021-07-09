@@ -63,5 +63,10 @@
 			allPagine = managerDB.getAllPagine();
 			managerCSV.insert(allPagine);
 		}
+
+		public void function inportInDB(){
+			allPagine = managerCSV.getAllPagine();
+			managerDB.inport(allPagine);
+		}
 	</cfscript>
 </cfcomponent>

@@ -50,7 +50,7 @@
 		<div  id="ambienteModifica">
 			<a href="modifica_ambienti.cfm?tipo=aggiungi&ambientiID=0">  <button class='btn btn-primary'>Aggiungi Ambiente</button> </a>
 		</div>
-		<a href="modifica_ambienti.cfm?tipo=export&ambientiID=0"><input type="button" class="btn btn-success" value="Esporta in un file CSV"></a>
-		<a href="modifica_ambienti.cfm?tipo=inport&ambientiID=0"><input type="button" class="btn btn-success" value="Inporta nel DB"></a>
+		<a href="modifica_ambienti.cfm?tipo=export&ambientiID=0"><input type="button" class="btn btn-outline-success" value="Esporta in un file CSV"></a>
+		<a href="modifica_ambienti.cfm?tipo=inport&ambientiID=0"><input type="button" class="btn btn-outline-success" value="Inporta nel DB"></a>
 	</body>
 </html>

@@ -40,6 +40,7 @@
 		<div id="bottoni">
 			<a href="modifica_pagine.cfm?tipo=aggiungi&pagid=0">  <button class='btn btn-primary'>Aggiungi Pagina</button> </a>
 		</div>
-		<a href="modifica_pagine.cfm?tipo=export&pagid=0"><input type="button" class="btn btn-success" value="Esporta in un file CSV"></a>
+		<a href="modifica_pagine.cfm?tipo=export&pagid=0"><input type="button" class="btn btn-outline-success" value="Esporta in un file CSV"></a>
+		<a href="modifica_pagine.cfm?tipo=inport&pagid=0"><input type="button" class="btn btn-outline-success" value="Inporta nel DB"></a>
 	</body>
 </html>
