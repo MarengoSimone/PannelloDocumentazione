@@ -15,6 +15,21 @@
 			return queryTab;
 		}
 
+		public any function getTabelle(){
+			queryTab = queryNew("nomeTabella, funzionalita, pagineUtilizzo, descrizione", "VarChar,VarChar, VarChar, VarChar");
+			fr = fileOpen("C:\ColdFusion2016\PannelloDocumentazione\wwwroot\PannelloDocumentazione\fileCSV\ListaTabelle.csv");
+			while(!fileIsEOF(fr)){
+				riga = fileReadLine(fr);
+				rigaArray = listToArray(#riga#, '-', false, false);
+				if(rigaArray[1] != "nomeTabella")
+				{
+					queryAddRow(queryTab, {"nomeTabella" = "#rigaArray[1]#", "funzionalita" = "#rigaArray[2]#", "pagineUtilizzo" = "#rigaArray[3]#", "descrizione" = "#rigaArray[4]#"});
+				}
+			}
+
+			return queryTab;
+		}
+
 		public any function updateTabella(form,id){
 			fr = fileOpen("C:\ColdFusion2016\PannelloDocumentazione\wwwroot\PannelloDocumentazione\fileCSV\ListaTabelle.csv");
 				toWrite = "";

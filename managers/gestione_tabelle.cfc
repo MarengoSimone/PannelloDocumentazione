@@ -53,6 +53,12 @@
 			fileWrite(fw, app);
 			fileClose(fw);	
 			cflocation( url="tabelle.cfm" );
-		}					
+		}
+
+		public void function importTabella(){
+			tabelle = gestioneCSV.getTabelle();
+			gestioneDB.importTabella(tabelle);
+			cflocation( url="tabelle.cfm" );
+		}				
 	</cfscript>
 </cfcomponent>

@@ -39,5 +39,13 @@
 			{datasource = "qa_tirocinioDev"}
 			);
 		}
+
+		public void function importTabella(tabelle){
+			for(i = 1; i <= tabelle.recordCount; i++){
+				QueryExecute(
+				"insert into ListaTabelle (nomeTabella, funzionalita, pagineUtilizzo, descrizione) values (:nomeTabella, :funzionalita, :pagineUtilizzo, :descrizione)",
+				 {nomeTabella = '#tabelle.nomeTabella[i]#',funzionalita = '#tabelle.funzionalita[i]#',pagineUtilizzo = '#tabelle.pagineUtilizzo[i]#',descrizione = '#tabelle.descrizione[i]#'}, {datasource = "qa_tirocinioDev"});	
+			}
+		}
 	</cfscript>
 </cfcomponent>
