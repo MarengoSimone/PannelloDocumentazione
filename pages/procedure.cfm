@@ -39,5 +39,7 @@
 		<div id="bottoni">
 			<a href="modifica_procedure.cfm?tipo=aggiungi&procedureid=0">  <button class='btn btn-primary'>Aggiungi Procedura</button> </a>
 		</div>
+		<a href="modifica_procedure.cfm?tipo=export&procedureid=0"> <input type="button" class="btn btn-outline-success" value="Esporta in un file CSV"></a>
+		<a href="modifica_procedure.cfm?tipo=inport&procedureid=0"> <input type="button" class="btn btn-outline-success" value="Inporta nel DB"></a>
 	</body>
 </html>

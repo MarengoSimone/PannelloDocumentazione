@@ -6,7 +6,17 @@
 		cflocation( url="ambienti.cfm" );
 	}
 
-	if(!isDefined("url.ambiente")){
+	if(url.tipo == "export"){
+		manager.ExportInCSV();
+		cflocation( url="ambienti.cfm" );
+	}
+
+	if(url.tipo == "inport"){
+		manager.inportInDB();
+		cflocation( url="ambienti.cfm" );
+	}
+
+	if(!isDefined("url.ambientiID")){
 		cflocation( url="ambienti.cfm" );
 	}
 </cfscript>
@@ -41,7 +51,7 @@
 				    </tr>
 				  </thead>
 				  <cfscript>
-				  	writeOutput(manager.creaContenutoTabella(url.tipo, url.ambiente));
+				  	writeOutput(manager.creaContenutoTabella(url.tipo, url.ambientiID));
 				  </cfscript>
 			</table>
 			<cfscript>

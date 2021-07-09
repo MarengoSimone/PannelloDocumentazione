@@ -29,7 +29,7 @@
 			writeOutput(navigation.creaNavigazione());
 		</cfscript>
 
-		<h1 class='text-center' style="margin:20px">AMBIENTI:</h1>
+		<h1 class='text-center' style="margin:20px"> AMBIENTI:</h1>
 		<table class="table table-striped">
 			  <thead>
 			    <tr>
@@ -48,7 +48,9 @@
 			  </cfscript>
 		</table>
 		<div  id="ambienteModifica">
-			<a href="modifica_ambienti.cfm?tipo=aggiungi&ambiente=niente">  <button class='btn btn-primary'>Aggiungi Ambiente</button> </a>
+			<a href="modifica_ambienti.cfm?tipo=aggiungi&ambientiID=0">  <button class='btn btn-primary'>Aggiungi Ambiente</button> </a>
 		</div>
+		<a href="modifica_ambienti.cfm?tipo=export&ambientiID=0"><input type="button" class="btn btn-outline-success" value="Esporta in un file CSV"></a>
+		<a href="modifica_ambienti.cfm?tipo=inport&ambientiID=0"><input type="button" class="btn btn-outline-success" value="Inporta nel DB"></a>
 	</body>
 </html>

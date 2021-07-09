@@ -5,6 +5,16 @@
 		cflocation( url="pagine.cfm" );
 	}
 
+	if(url.tipo == "export"){
+		manager.exportInCSV();
+		cflocation( url="pagine.cfm" );
+	}
+
+	if(url.tipo == "inport"){
+		manager.inportInDB();
+		cflocation( url="pagine.cfm" );
+	}
+
 	if(!isDefined("url.pagid")){
 		cflocation( url="pagine.cfm" );
 	}

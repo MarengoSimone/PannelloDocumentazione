@@ -4,8 +4,8 @@
 		managerCSV = createObject('component', "PannelloDocumentazione/managersCSV/CSV_pagine");
 
 		public string function scriviTabella(){
-			//allPagine = managerDB.getAllPagine();
-			allPagine = managerCSV.getAllPagine();
+			allPagine = managerDB.getAllPagine();
+			//allPagine = managerCSV.getAllPagine();
 			local.righeTabella = "<tbody>";
 			for(local.i = 1; local.i <= allPagine.recordCount; local.i++){
 				if(allPagine.loc[local.i] != "")
@@ -32,14 +32,14 @@
 
 		public void function controlloForm(form){
 			if(isDefined("form") && isDefined("form.btnAggiungiPagina") && form.btnAggiungiPagina == "Aggiungi Pagina"){
-				//managerDB.aggiungiFormDB(form);
-				managerCSV.aggiungiFormCSV(form);
+				managerDB.aggiungiFormDB(form);
+				//managerCSV.aggiungiFormCSV(form);
 			}else if(isDefined("form") && isDefined("form.btnModificaPagina") && form.btnModificaPagina == "Aggiorna Pagina"){
-				//managerDB.updateFormDB(form);
-				managerCSV.modificaFormCSV(form);
+				managerDB.updateFormDB(form);
+				//managerCSV.modificaFormCSV(form);
 			}else if(isDefined("form") && isDefined("form.btnEliminaPagina") && form.btnEliminaPagina == "Elimina Pagina"){
-				//managerDB.eliminaFormDB(form);
-				managerCSV.eliminaFormCSV(form);
+				managerDB.eliminaFormDB(form);
+				//managerCSV.eliminaFormCSV(form);
 			}
 		}
 	</cfscript>
