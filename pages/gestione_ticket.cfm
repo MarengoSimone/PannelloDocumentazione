@@ -13,7 +13,7 @@
 	{
 		cflocation( url="categorie.cfm" );
 	}
-	else if(#url.mode# != "Aggiorna" && #url.mode# != "Aggiungi" && #url.mode# != "Elimina" && #url.mode# != "Export")
+	else if(#url.mode# != "Aggiorna" && #url.mode# != "Aggiungi" && #url.mode# != "Elimina" && #url.mode# != "Export" && #url.mode# != "Import")
 	{
 		cflocation( url="categorie.cfm" );
 	}
@@ -21,6 +21,10 @@
 	if(#url.mode# == "Export")
 	{
 		gestioneTicket.exportTicket(#url.categoria#);
+	}
+	else if(#url.mode# == "Import")
+	{
+		gestioneTicket.importTicket(#url.categoria#);
 	}
 </cfscript>
 

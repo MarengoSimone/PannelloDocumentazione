@@ -67,6 +67,7 @@
 					writeOutput(ticket.generaPulsanti(#url.categoria#));
 					</cfscript>
 				</div>
-				<a href='gestione_ticket.cfm?mode=Export&categoria=<cfoutput>#url.categoria#</cfoutput>&nome=&id=0'>  <button class='btn btn-success'>Esporta in file CSV</button> </a>
+				<a href='gestione_ticket.cfm?mode=Export&categoria=<cfoutput>#url.categoria#</cfoutput>&nome=&id=0'>  <button class='btn btn-outline-success'>Esporta in file CSV</button> </a>
+				<a href='gestione_ticket.cfm?mode=Import&categoria=<cfoutput>#url.categoria#</cfoutput>&nome=&id=0'>  <button class='btn btn-outline-success'>Importa da file CSV</button> </a>
 	</body>
 </html>

@@ -58,6 +58,12 @@
 			fileWrite(fw, app);
 			fileClose(fw);	
 			cflocation( url="tickets.cfm?categoria=#categoria#");
-		}							
+		}		
+
+		public void function importTicket(categoria){
+			tickets = gestioneCSV.getTickets(categoria);
+			gestioneDB.importTickets(tickets);
+			cflocation( url="tickets.cfm?categoria=#categoria#" );
+		}						
 	</cfscript>
 </cfcomponent>
