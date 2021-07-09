@@ -11,6 +11,11 @@
 		cflocation( url="ambienti.cfm" );
 	}
 
+	if(url.tipo == "inport"){
+		manager.inportInDB();
+		cflocation( url="ambienti.cfm" );
+	}
+
 	if(!isDefined("url.ambientiID")){
 		cflocation( url="ambienti.cfm" );
 	}

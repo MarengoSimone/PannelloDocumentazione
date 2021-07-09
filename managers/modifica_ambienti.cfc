@@ -71,5 +71,10 @@
 			allAmbienti = managerDB.getAllAmbienti();
 			managerCSV.inport(allAmbienti);
 		}
+
+		public void function inportInDB(){
+			allAmbienti = managerCSV.getAllAmbienti();
+			managerDB.inport(allAmbienti);
+		}
 	</cfscript>
 </cfcomponent>

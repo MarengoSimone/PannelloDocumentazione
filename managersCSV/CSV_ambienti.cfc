@@ -1,14 +1,14 @@
 <cfcomponent>
 	<cfscript>
 			public any function getAllAmbienti(){
-				queryAmbienti = queryNew("ambiente, portale, administrator, utils, proced, versione", "varchar, varchar, varchar, varchar, varchar, varchar");
+				queryAmbienti = queryNew("ambientiID, ambiente, portale, administrator, utils, proced, versione", "integer, varchar, varchar, varchar, varchar, varchar, varchar");
 				fo = fileOpen("C:\ColdFusion2016\PannelloDocumentazione\wwwroot\PannelloDocumentazione\fileCSV\ambienti.csv");
 				while(!fileIsEOF(fo)){
 					riga = fileReadLine(fo);
 					rigaArray = listToArray(riga, '-', false, false);
 
-					if(rigaArray[1] != "ambiente"){
-						queryAddRow(queryAmbienti, {"ambiente" = rigaArray[1], "portale" = rigaArray[2], "administrator" = rigaArray[3], "utils" = rigaArray[4], "proced" = rigaArray[5], "versione" = rigaArray[6]});
+					if(rigaArray[1] != "ambientiID"){
+						queryAddRow(queryAmbienti, {"ambientiID" = rigaArray[1], "ambiente" = rigaArray[2], "portale" = rigaArray[3], "administrator" = rigaArray[4], "utils" = rigaArray[5], "proced" = rigaArray[6], "versione" = rigaArray[7]});
 					}
 				}
 				return queryAmbienti;
