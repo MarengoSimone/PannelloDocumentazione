@@ -2,6 +2,7 @@
 	<cfscript> 
 		gestioneDB = createObject("component", "PannelloDocumentazione\managersDB\DB_gestione_ticket");
 		gestioneCSV = createObject("component", "PannelloDocumentazione\managersCSV\CSV_gestione_ticket");
+		ticketDB = createObject("component", "PannelloDocumentazione\managersDB\DB_tickets");
 
 		public any function caricaTabella(mode,id){
 			row = "";
@@ -43,6 +44,20 @@
 
 		public void function deleteTicket(form,id){
 			gestioneDB.deleteTicket(form,id);
-		}					
+		}
+
+		public void function exportTicket(categoria){
+			tickets = ticketDB.queryTickets(categoria);
+			app = "nomeTicket-descrizione-problemi-test-installazione-categoria-" & chr(10);
+
+			for(i=1;i<=tickets.recordCount;i++)
+			{
+				app &= "#tickets.nomeTicket[i]#-#tickets.descrizione[i]#-#tickets.problemi[i]#-#tickets.test[i]#-#tickets.installazione[i]#-#tickets.categoria[i]#-" & chr(10);
+			}
+			fw = fileOpen("C:\ColdFusion2016\PannelloDocumentazione\wwwroot\PannelloDocumentazione\fileCSV\Tickets.csv", "write");
+			fileWrite(fw, app);
+			fileClose(fw);	
+			cflocation( url="tickets.cfm?categoria=#categoria#");
+		}							
 	</cfscript>
 </cfcomponent>

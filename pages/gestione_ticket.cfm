@@ -13,9 +13,14 @@
 	{
 		cflocation( url="categorie.cfm" );
 	}
-	else if(#url.mode# != "Aggiorna" && #url.mode# != "Aggiungi" && #url.mode# != "Elimina")
+	else if(#url.mode# != "Aggiorna" && #url.mode# != "Aggiungi" && #url.mode# != "Elimina" && #url.mode# != "Export")
 	{
 		cflocation( url="categorie.cfm" );
+	}
+
+	if(#url.mode# == "Export")
+	{
+		gestioneTicket.exportTicket(#url.categoria#);
 	}
 </cfscript>
 
