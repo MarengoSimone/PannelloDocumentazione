@@ -13,5 +13,16 @@
 
 				return queryPagine;
 			}
+
+			public void function insert(allPagine){
+				daScrivere = "nomePagina-loc-funzioni-tabelle-pagID" & chr(10);
+
+				for(i = 1; i <= allPagine.recordCount; i++){
+					daScrivere &= "#allPagine.nomePagina[i]#-#allPagine.loc[i]#-#allPagine.funzioni[i]#-#allPagine.tabelle[i]#-#allPagine.pagID[i]#" & chr(10);
+				}
+				fw = fileOpen("C:\ColdFusion2016\PannelloDocumentazione\wwwroot\PannelloDocumentazione\fileCSV\pagine.csv", "write");
+				fileWriteLine(fw, daScrivere);
+				fileClose(fw);
+			}
 	</cfscript>
 </cfcomponent>

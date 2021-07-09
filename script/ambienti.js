@@ -14,8 +14,8 @@ window.onload = function(){
 	}
 
 	function bottoniModifica(){
-		_ambienteModifica.innerHTML = `<a href="modifica_ambienti.cfm?tipo=aggiungi&ambiente=niente">  <button class='btn btn-primary'>Aggiungi Ambiente</button> </a>
-		<a href='modifica_ambienti.cfm?tipo=modifica&ambiente=${this.value}'>  <button class='btn btn-info'>Aggiorna Ambiente</button> </a>`
+		_ambienteModifica.innerHTML = `<a href="modifica_ambienti.cfm?tipo=aggiungi&ambientiID=0">  <button class='btn btn-primary'>Aggiungi Ambiente</button> </a>
+		<a href='modifica_ambienti.cfm?tipo=modifica&ambientiID=${this.value}'>  <button class='btn btn-info'>Aggiorna Ambiente</button> </a>`
 
 		for(let i = 0; i < _radioElimina.length; i++){
 			if(_radioElimina[i].checked){
@@ -25,8 +25,8 @@ window.onload = function(){
 	}
 
 	function bottoniElimina(){
-		_ambienteModifica.innerHTML = `<a href="modifica_ambienti.cfm?tipo=aggiungi&ambiente=niente">  <button class='btn btn-primary'>Aggiungi Ambiente</button> </a>
-		<a href='modifica_ambienti.cfm?tipo=elimina&ambiente=${this.value}'>  <button class='btn btn-danger'>Elimina Ambiente</button> </a>`
+		_ambienteModifica.innerHTML = `<a href="modifica_ambienti.cfm?tipo=aggiungi&ambientiID=0">  <button class='btn btn-primary'>Aggiungi Ambiente</button> </a>
+		<a href='modifica_ambienti.cfm?tipo=elimina&ambientiID=${this.value}'>  <button class='btn btn-danger'>Elimina Ambiente</button> </a>`
 
 		for(let i = 0; i < _radioModifica.length; i++){
 			if(_radioModifica[i].checked){

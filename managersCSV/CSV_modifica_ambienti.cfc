@@ -13,5 +13,16 @@
 
 				return queryAmbienti;
 			}
+
+			public void function inport(allAmbienti){
+				daScrivere = "ambientiID-ambiente-portale-administrator-utils-proced-versione" & chr(10);
+
+				for(i = 1; i <= allAmbienti.recordCount; i++){
+					daScrivere &= "#allAmbienti.ambientiID[i]#-#allAmbienti.ambiente[i]#-#allAmbienti.portale[i]#-#allAmbienti.administrator[i]#-#allAmbienti.utils[i]#-#allAmbienti.proced[i]#-#allAmbienti.versione[i]#" & chr(10);
+				}
+				fw = fileOpen("C:\ColdFusion2016\PannelloDocumentazione\wwwroot\PannelloDocumentazione\fileCSV\ambienti.csv", "write");
+				fileWriteLine(fw, daScrivere);
+				fileClose(fw);
+			}
 	</cfscript>
 </cfcomponent>

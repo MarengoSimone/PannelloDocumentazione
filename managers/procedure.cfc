@@ -4,8 +4,8 @@
 		managerCSV = createObject('component', "PannelloDocumentazione/managersCSV/CSV_procedure");
 
 		public string function scriviTabella(){
-			//allProcedure = managerDB.getAllProcedure();
-			allProcedure = managerCSV.getAllProcedure();
+			allProcedure = managerDB.getAllProcedure();
+			//allProcedure = managerCSV.getAllProcedure();
 			local.righeTabella = "<tbody>";
 			for(local.i = 1; local.i <= allProcedure.recordCount; local.i++){
 				if(allProcedure.descrizione[local.i] != ""){
@@ -29,14 +29,14 @@
 
 		public void function controlloForm(form){
 			if(isDefined("form") && isDefined("form.btnAggiungiProcedura") && form.btnAggiungiProcedura == "Aggiungi Procedura"){
-				//managerDB.aggiungiFormDB(form);
-				managerCSV.aggiungiFormCSV(form);
+				managerDB.aggiungiFormDB(form);
+				//managerCSV.aggiungiFormCSV(form);
 			}else if(isDefined("form") && isDefined("form.btnModificaProcedura") && form.btnModificaProcedura == "Aggiorna Procedura"){
-				//managerDB.modificaFormDB(form);
-				managerCSV.modificaFormCSV(form);
+				managerDB.modificaFormDB(form);
+				//managerCSV.modificaFormCSV(form);
 			}else if(isDefined("form") && isDefined("form.btnEliminaProcedura") && form.btnEliminaProcedura == "Elimina Procedura"){
-				//managerDB.eliminaFormDB(form);
-				managerCSV.eliminaFormCSV(form);
+				managerDB.eliminaFormDB(form);
+				//managerCSV.eliminaFormCSV(form);
 			}
 		}
 	</cfscript>

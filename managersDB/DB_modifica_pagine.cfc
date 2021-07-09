@@ -6,5 +6,12 @@
 				{pagid = '#pagid#'},
 				{datasource = "qa_tirocinioDev"});
 		}
+
+		public any function getAllPagine(){
+			return queryExecute(
+				"select * from Pagine",
+				{},
+				{datasource = "qa_tirocinioDev"});
+		}
 	</cfscript>
 </cfcomponent>

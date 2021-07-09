@@ -6,7 +6,6 @@
 				while(!fileIsEOF(fo)){
 					riga = fileReadLine(fo);
 					rigaArray = listToArray(riga, '-', false, false);
-
 					if(rigaArray[1] != "nomeProcedura"){
 						queryAddRow(queryProcedure, {"nomeProcedura" = rigaArray[1], "descrizione" = rigaArray[2], "note" = rigaArray[3], "procedureID" = rigaArray[4]});
 					}

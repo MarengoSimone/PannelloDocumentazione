@@ -22,8 +22,8 @@
 		}
 
 		public string function tabellaModifca(pagid){
-			//allPaginePagID = managerDB.getAllPaginePagID(pagid);
-			allPaginePagID = managerCSV.getAllPaginePagID(pagid);
+			allPaginePagID = managerDB.getAllPaginePagID(pagid);
+			//allPaginePagID = managerCSV.getAllPaginePagID(pagid);
 			return "<tbody>
 					<td scope='row'><input type='text' name='txtNomePagina' value='#allPaginePagID.nomePagina#' required></td>
 					<td scope='row'><textarea name='txtLocazione' cols='40'>#allPaginePagID.loc#</textarea></td>
@@ -34,8 +34,8 @@
 		}
 
 		public string function tabellaElimina(pagid){
-			//allPaginePagID = managerDB.getAllPaginePagID(pagid);
-			allPaginePagID = managerCSV.getAllPaginePagID(pagid);
+			allPaginePagID = managerDB.getAllPaginePagID(pagid);
+			//allPaginePagID = managerCSV.getAllPaginePagID(pagid);
 			return "<tbody>
 					<td scope='row'><input type='text' name='txtNomePagina' value='#allPaginePagID.nomePagina#' readonly></td>
 					<td scope='row'><textarea name='txtLocazione' cols='40' readonly disabled>#allPaginePagID.loc#</textarea></td>
@@ -57,6 +57,11 @@
 				return "<a href='pagine.cfm'><input type='button' class='btn btn-warning' value='Indietro'></a>
 						<input type = 'submit' class='btn btn-danger' name='btnEliminaPagina' value='Elimina Pagina'>";
 			}
+		}
+
+		public void function exportInCSV(){
+			allPagine = managerDB.getAllPagine();
+			managerCSV.insert(allPagine);
 		}
 	</cfscript>
 </cfcomponent>

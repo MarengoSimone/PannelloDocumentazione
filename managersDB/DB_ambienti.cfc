@@ -22,20 +22,21 @@
 
 		public void function modificaFormDB(form){
 			q = queryExecute(
-				"update Ambienti set portale = :portale, administrator = :administrator, utils = :utils, proced = :proced, versione = :versione where ambiente = :ambiente",
+				"update Ambienti set ambiente = :ambiente, portale = :portale, administrator = :administrator, utils = :utils, proced = :proced, versione = :versione where ambientiID = :id",
 				{ambiente = '#form.txtAmbiente#',
 				 portale = '#form.txtPortale#',
 				 administrator = '#form.txtAdministrator#',
 				 utils = '#form.txtUtils#',
 				 proced = '#form.txtProcedura#',
-				 versione = '#form.txtVersione#'},
+				 versione = '#form.txtVersione#',
+				 id = '#form.txtAmbientiID#'},
 				{datasource = "qa_tirocinioDev"});
 		}
 
 		public void function eliminaFormDB(form){
 			q = queryExecute(
-				"delete from Ambienti where ambiente = :ambiente",
-				{ambiente = '#form.txtAmbiente#'},
+				"delete from Ambienti where ambientiID = :id",
+				{id = '#form.txtAmbientiID#'},
 				{datasource = "qa_tirocinioDev"});
 		}
 	</cfscript>

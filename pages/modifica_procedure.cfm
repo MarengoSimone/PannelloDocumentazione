@@ -5,6 +5,16 @@
 		cflocation( url="procedure.cfm" );
 	}
 
+	if(url.tipo == "export"){
+		manager.exportInCSV();
+		cflocation( url="procedure.cfm" );
+	}
+
+	if(url.tipo == "inport"){
+		manager.inportInDB();
+		cflocation( url="procedure.cfm" );
+	}
+
 	if(!isDefined("url.procedureid")){
 		cflocation( url="procedure.cfm" );
 	}

@@ -1,9 +1,16 @@
 <cfcomponent>
 	<cfscript>
-		public any function getAllAmbientiAmbiente(ambiente){
+		public any function getAllAmbienti(){
 			return queryExecute(
-				"select * from Ambienti where ambiente = '#ambiente#'",
+				"select * from Ambienti",
 				{},
+				{datasource = "qa_tirocinioDev"});
+		}
+
+		public any function getAllAmbientiAmbiente(ambientiID){
+			return queryExecute(
+				"select * from Ambienti where ambientiID = :id",
+				{id = '#ambientiID#'},
 				{datasource = "qa_tirocinioDev"});
 		}
 

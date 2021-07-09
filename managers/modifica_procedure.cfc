@@ -22,8 +22,8 @@
 		}
 
 		public string function tabellaModifica(procedureID){
-			//allProcedureProcedureID = managerDB.getAllProcedureProcedureID(procedureID);
-			allProcedureProcedureID = managerCSV.getAllProcedureProcedureID(procedureID);
+			allProcedureProcedureID = managerDB.getAllProcedureProcedureID(procedureID);
+			//allProcedureProcedureID = managerCSV.getAllProcedureProcedureID(procedureID);
 			return "<tbody>
 					<td scope='row'><input type='text' name='txtNomeProcedura' value='#allProcedureProcedureID.nomeProcedura#' required></td>
 					<td scope='row'><textarea name='txtDescrizione' cols='60'>#allProcedureProcedureID.descrizione#</textarea></td>
@@ -33,8 +33,8 @@
 		}
 
 		public string function tabellaElimina(procedureID){
-			//allProcedureProcedureID = managerDB.getAllProcedureProcedureID(procedureID);
-			allProcedureProcedureID = managerCSV.getAllProcedureProcedureID(procedureID);
+			allProcedureProcedureID = managerDB.getAllProcedureProcedureID(procedureID);
+			//allProcedureProcedureID = managerCSV.getAllProcedureProcedureID(procedureID);
 			return "<tbody>
 					<td scope='row'><input type='text' name='txtNomeProcedura' value='#allProcedureProcedureID.nomeProcedura#' readonly></td>
 					<td scope='row'><textarea name='txtDescrizione' rows='5' cols='60' readonly disabled>#allProcedureProcedureID.descrizione#</textarea></td>
@@ -55,6 +55,16 @@
 				return "<a href='procedure.cfm'><input type='button' class='btn btn-warning' value='Indietro'></a>
 						<input type = 'submit' class='btn btn-danger' name='btnEliminaProcedura' value='Elimina Procedura'>";
 			}
+		}
+
+		public void function exportInCSV(){
+			allProcedure = managerDB.getAllProcedure();
+			managerCSV.inport(allProcedure);
+		}
+
+		public void function inportInDB(){
+			allProcedure = managerCSV.getAllProcedure();
+			managerDB.inport(allProcedure);
 		}
 	</cfscript>
 </cfcomponent>
