@@ -12,15 +12,15 @@
 					   <td scope='row'> <textarea name='txtDescrizione' cols='30'> </textarea> </td>";
 			}
 			else if(#mode# == "Aggiorna"){
-				q = gestioneCSV.getTabella(#id#);
-				row = "<td scope='row'> <input type='text' name='txtNome' value=' #q.nomeTabella# ' readonly> </td>
+				q = gestioneDB.getTabella(#id#);
+				row = "<td scope='row'> <textarea name='txtNome'> #q.nomeTabella# </textarea> </td>
 					   <td scope='row'> <textarea name='txtFunzionalita'> #q.funzionalita# </textarea> </td>
 					   <td scope='row'> <textarea name='txtPagine'> #q.pagineUtilizzo# </textarea> </td>
 					   <td scope='row'> <textarea name='txtDescrizione'> #q.descrizione# </textarea> </td>";
 			}
 			else if(#mode# == "Elimina")
 			{
-				q = gestioneCSV.getTabella(#id#);
+				q = gestioneDB.getTabella(#id#);
 				row = "<td scope='row'> <input type='text' name='txtNome' value=' #q.nomeTabella# ' readonly> </td>
 					   <td scope='row'> <textarea name='txtFunzionalita' readonly> #q.funzionalita#  </textarea> </td>
 					   <td scope='row'> <textarea name='txtPagine' readonly> #q.pagineUtilizzo# </textarea> </td>
@@ -30,15 +30,35 @@
 		}
 
 		public void function uploadTabella(form){
-			gestioneCSV.uploadTabella(form);
+			gestioneDB.uploadTabella(form);
 		}
 
 		public void function updateTabella(form,id){
-			gestioneCSV.updateTabella(form,id);
+			gestioneDB.updateTabella(form,id);
 		}
 
 		public void function deleteTabella(id){
-			gestioneCSV.deleteTabella(id);
-		}					
+			gestioneDB.deleteTabella(id);
+		}
+
+		public void function exportTabella(){
+			tabelle = gestioneDB.queryTabelle();
+			app = "nomeTabella-funzionalita-pagineUtilizzo-descrizione-" & chr(10);
+
+			for(i=1;i<=tabelle.recordCount;i++)
+			{
+				app &= "#tabelle.nomeTabella[i]#-#tabelle.funzionalita[i]#-#tabelle.pagineUtilizzo[i]#-#tabelle.descrizione[i]#-" & chr(10);
+			}
+			fw = fileOpen("C:\ColdFusion2016\PannelloDocumentazione\wwwroot\PannelloDocumentazione\fileCSV\ListaTabelle.csv", "write");
+			fileWrite(fw, app);
+			fileClose(fw);	
+			cflocation( url="tabelle.cfm" );
+		}
+
+		public void function importTabella(){
+			tabelle = gestioneCSV.getTabelle();
+			gestioneDB.importTabella(tabelle);
+			cflocation( url="tabelle.cfm" );
+		}				
 	</cfscript>
 </cfcomponent>

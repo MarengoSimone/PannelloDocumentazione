@@ -15,8 +15,8 @@ window.onload = function(){
 
 function bottoniModifica(){
 		_ambienteModifica.innerHTML = `
-		<a href='gestione_categorie.cfm?mode=Aggiungi&categoria=categoria'>  <button class='btn btn-primary'> Aggiungi Categoria</button> </a>
-		<a href='gestione_categorie.cfm?mode=Aggiorna&categoria=${this.value}'>  <button class='btn btn-info' id='btnAggiorna'> Aggiorna Categoria</button> </a>`
+		<a href='gestione_categorie.cfm?mode=Aggiungi&categoria=categoria&id=0'>  <button class='btn btn-primary'> Aggiungi Categoria</button> </a>
+		<a href='gestione_categorie.cfm?mode=Aggiorna&categoria=${this.value}&id=${this.id}'>  <button class='btn btn-info' id='btnAggiorna'> Aggiorna Categoria</button> </a>`
 
 		for(let i = 0; i < _radiosElimina.length; i++){
 			if(_radiosElimina[i].checked == true)
@@ -28,8 +28,9 @@ function bottoniModifica(){
 
 function bottoniElimina(){
 		_ambienteModifica.innerHTML = `
-		<a href='gestione_categorie.cfm?mode=Aggiungi&categoria=categoria'>  <button class='btn btn-primary'> Aggiungi Categoria</button> </a>
-		<a href='gestione_categorie.cfm?mode=Elimina&categoria=${this.value}'>  <button class='btn btn-danger' id='btnElimina'>Elimina Categoria</button> </a`
+		<a href='index.cfm'>  <button class='btn btn-warning'> Indietro</button> </a>
+		<a href='gestione_categorie.cfm?mode=Aggiungi&categoria=categoria&id=0'>  <button class='btn btn-primary'> Aggiungi Categoria</button> </a>
+		<a href='gestione_categorie.cfm?mode=Elimina&categoria=${this.value}&id=${this.id}'>  <button class='btn btn-danger' id='btnElimina'>Elimina Categoria</button> </a`
 
 		for(let i = 0; i < _radiosModifica.length; i++){
 			if(_radiosModifica[i].checked == true)

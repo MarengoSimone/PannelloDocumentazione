@@ -3,7 +3,7 @@
 		tabDB = createObject("component", "PannelloDocumentazione\managersDB\DB_tabelle");
 		tabCSV = createObject("component", "PannelloDocumentazione\managersCSV\CSV_tabelle");
 		public any function creaRighe(){
-			tabelle = tabCSV.queryTabelle();
+			tabelle = tabDB.queryTabelle();
 			app = " ";
 			for(i=1;i<=tabelle.recordCount;i++)
 			{	
@@ -14,6 +14,7 @@
 
 		public any function generaPulsanti(){
 			return "
+				<a href='index.cfm'>  <button class='btn btn-warning'> Indietro</button> </a>
 				<a href='gestione_tabelle.cfm?mode=Aggiungi&id=0'>  <button class='btn btn-primary'> Aggiungi Tabella</button> </a>";
 		}
 	</cfscript>

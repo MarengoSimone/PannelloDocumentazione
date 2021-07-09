@@ -16,11 +16,11 @@ window.onload = function(){
 	}
 
 function bottoniModifica(){
-		let categoria = document.getElementsByClassName("categoria")[0];
-		console.log(categoria);
+		//console.log(this["index"]);
+		let categoria = document.getElementsByClassName("categoria");
 		_ambienteModifica.innerHTML = `<a href='categorie.cfm'>  <button class='btn btn-warning'> Indietro</button> </a>
-		<a href='gestione_ticket.cfm?mode=Aggiungi&categoria=${categoria.value}&nome='''>  <button class='btn btn-primary'> Aggiungi Ticket</button> </a>
-		<a href='gestione_ticket.cfm?mode=Aggiorna&nome=${this.value}&categoria=${categoria.value}'>  <button class='btn btn-info' id='btnAggiorna'> Aggiorna Ticket</button> </a>`
+		<a href='gestione_ticket.cfm?mode=Aggiungi&categoria=${categoria[0].value}&nome=&id=${this.value}'>  <button class='btn btn-primary'> Aggiungi Ticket</button> </a>
+		<a href='gestione_ticket.cfm?mode=Aggiorna&nome=${this.value}&categoria=${categoria[0].value}&id=${categoria[0].id}'>  <button class='btn btn-info' id='btnAggiorna'> Aggiorna Ticket</button> </a>`
 
 		for(let i = 0; i < _radiosElimina.length; i++){
 			if(_radiosElimina[i].checked == true)
@@ -32,10 +32,10 @@ function bottoniModifica(){
 }
 
 function bottoniElimina(){
-	let categoria = document.getElementsByClassName("categoria")[0];
+	let categoria =  document.getElementsByClassName("categoria");
 		_ambienteModifica.innerHTML = `<a href='categorie.cfm'>  <button class='btn btn-warning'> Indietro</button> </a>
-		<a href='gestione_ticket.cfm?mode=Aggiungi&categoria=${categoria.value}'&nome='' '>  <button class='btn btn-primary'> Aggiungi Ticket</button> </a>
-		<a href='gestione_ticket.cfm?mode=Elimina&nome=${this.value}&categoria=${categoria.value}'>  <button class='btn btn-danger' id='btnElimina'>Elimina Ticket</button> </a`
+		<a href='gestione_ticket.cfm?mode=Aggiungi&categoria=${categoria[0].value}&nome=&id=${this.value}'>  <button class='btn btn-primary'> Aggiungi Ticket</button> </a>
+		<a href='gestione_ticket.cfm?mode=Elimina&nome=${this.value}&categoria=${categoria[0].value}&id=${categoria[0].id}'>  <button class='btn btn-danger' id='btnElimina'>Elimina Ticket</button> </a`
 
 		for(let i = 0; i < _radiosModifica.length; i++){
 			if(_radiosModifica[i].checked == true)

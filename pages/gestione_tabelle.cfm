@@ -10,7 +10,7 @@
 	{
 		cflocation( url="tabelle.cfm" );
 	}
-	else if((#url.mode# != "Aggiorna" && #url.mode# != "Aggiungi" && #url.mode# != "Elimina"))
+	else if((#url.mode# != "Aggiorna" && #url.mode# != "Aggiungi" && #url.mode# != "Elimina" && #url.mode# != "Export" && #url.mode# != "Import"))
 	{
 		cflocation( url="tabelle.cfm" );
 	}
@@ -18,6 +18,14 @@
 	if(#url.mode# == "Aggiungi")
 	{
 		url.id = 0;
+	}
+	else if(#url.mode# == "Export")
+	{
+		gestioneTabelle.exportTabella();
+	}
+	else if(#url.mode# == "Import")
+	{
+		gestioneTabelle.importTabella();
 	}
 </cfscript>
 
@@ -56,6 +64,7 @@
 				  		</cfscript>
 				  </tbody>
 			</table>
+				<a href='tabelle.cfm'>  <button class='btn btn-warning'> Indietro </button> </a>
 				<input class='btn btn-primary' type='submit' name='btnSubmit' value='<cfoutput>#url.mode# Tabella</cfoutput>' style='margin:10px;'> </input>
 			</cfform>
 	</body>

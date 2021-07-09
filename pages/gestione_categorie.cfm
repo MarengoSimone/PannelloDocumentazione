@@ -17,11 +17,11 @@
 	}
 	else if (isDefined("form") && isDefined("form.BTNSUBMIT") && (#form.BTNSUBMIT# == "Aggiorna Categoria"))
 	{
-		manager.updateCategoria(form,url.categoria);
+		manager.updateCategoria(form,url.id);
 	}
 	else if (isDefined("form") && isDefined("form.BTNSUBMIT") && (#form.BTNSUBMIT# == "Elimina Categoria"))
 	{
-		manager.deleteCategoria(#url.categoria#);
+		manager.deleteCategoria(url.id);
 	}
 </cfscript>
 
@@ -44,7 +44,7 @@
 		</cfscript>
 		
 			<h1 class='text-center' style="margin:20px"> <cfoutput> #url.mode# Categoria: </cfoutput> </h1>
-			<cfform action="categorie.cfm?categoria=#url.categoria#" method="post">
+			<cfform action="categorie.cfm?id=#url.id#" method="post">
 				<div id="insert">
 				  <label>Categoria:</label>
 				  <input type="text" name="txtCategoria" id="txtCategoria" value='<cfoutput>#url.categoria#</cfoutput>'>

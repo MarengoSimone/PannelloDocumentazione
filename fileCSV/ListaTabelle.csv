@@ -1,2 +1,4 @@
-tabId-nomeTabella-funzionalita-pagineUtilizzo-descrizione
-5-   Categorie   -   Visualizzazione e modifica   -  categorie.cfm;categorie.cfc   -   Gestione delle2 Categorie   -
+nomeTabella-funzionalita-pagineUtilizzo-descrizione-
+Categorie  -Visualizzazione, modifica e aggiunta -categorie.cfm;categorie.cfc  -Gestione delle Categorie  -
+Ambienti-Modifica e lettura-ambienti.cfc;ambienti.cfm-Gestione Ambienti-
+Pagine-Mostra pagine del progetto -pagine.cfm -Funziona correttamente -

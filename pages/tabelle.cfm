@@ -1,7 +1,7 @@
 <cfscript>
 	manager = createObject("component","PannelloDocumentazione\managers\tabelle");
 	managerTabelle = createObject("component","PannelloDocumentazione\managers\gestione_tabelle");
-	navigation = createObject('component', 'PannelloDocumentazione/navigation/navigazione');
+	navigation = createObject("component", "PannelloDocumentazione\navigation\navigazione");
 
 	if(isDefined("form") && isDefined("form.BTNSUBMIT") && (#form.BTNSUBMIT# == "Aggiungi Tabella"))
 	{
@@ -28,7 +28,7 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 		<!-- SPECIFICI -->
 		<link rel="stylesheet" href="..\style\index.css">
-		<script src="..\script\tabelle.js"></script>
+		<script src="..\script\tabelle.js"> </script>
 		<link rel="icon" href="..\assets\img\icon.png" type="image/icon type">
 	</head>
 	<body>
@@ -54,11 +54,13 @@
 					  		</cfscript>
 					  </tbody>
 				</table>
-
+				
 				<div id="buttons">
 					<cfscript>
 						writeOutput(manager.generaPulsanti());
 					</cfscript>
 				</div>
+				<a href='gestione_tabelle.cfm?mode=Export&id=0'>  <button class='btn btn-outline-success'>Esporta in file CSV</button> </a>
+				<a href='gestione_tabelle.cfm?mode=Import&id=0'>  <button class='btn btn-outline-success'>Importa da file CSV</button> </a>
 	</body>
 </html>

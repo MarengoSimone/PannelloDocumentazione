@@ -13,9 +13,18 @@
 	{
 		cflocation( url="categorie.cfm" );
 	}
-	else if(#url.mode# != "Aggiorna" && #url.mode# != "Aggiungi" && #url.mode# != "Elimina")
+	else if(#url.mode# != "Aggiorna" && #url.mode# != "Aggiungi" && #url.mode# != "Elimina" && #url.mode# != "Export" && #url.mode# != "Import")
 	{
 		cflocation( url="categorie.cfm" );
+	}
+
+	if(#url.mode# == "Export")
+	{
+		gestioneTicket.exportTicket(#url.categoria#);
+	}
+	else if(#url.mode# == "Import")
+	{
+		gestioneTicket.importTicket(#url.categoria#);
 	}
 </cfscript>
 
@@ -38,7 +47,7 @@
 		</cfscript>
 		
 			<h1 class='text-center' style="margin:20px"> <cfoutput> #url.mode# Ticket: </cfoutput> </h1>
-			<cfform  action='tickets.cfm?categoria=#url.categoria#&nome=#url.nome#' method='post'>
+			<cfform  action='tickets.cfm?categoria=#url.categoria#&nome=#url.nome#&id=#url.id#' method='post'>
 			<table class="table table-striped">
 				  <thead>
 				    <tr>
@@ -51,15 +60,16 @@
 				  </thead>
 				  <tbody>
 				  		<cfscript>
-						if(#url.nome# == "undefined")
+						if(#url.id# == "undefined")
 						{
-							writeOutput(gestioneTicket.caricaTabella(#url.mode#,"test"));
+							writeOutput(gestioneTicket.caricaTabella(#url.mode#,0));
 						}
 						else
 							writeOutput(gestioneTicket.caricaTabella(#url.mode#,#url.nome#));
 				  		</cfscript>
 				  </tbody>
 			</table>
+				<a href='tickets.cfm?categoria=<cfoutput>#url.categoria#</cfoutput>'>  <button class='btn btn-warning'> Indietro </button> </a>	
 				<input class='btn btn-primary' type='submit' name='btnSubmit' value='<cfoutput>#url.mode# Ticket</cfoutput>' style='margin:10px;'> </input>
 			</cfform>
 	</body>
