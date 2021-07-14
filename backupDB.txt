@@ -1,0 +1,41 @@
+use tp_62_dev
+create table ListaTabelle (
+	tabId int identity(1,1) primary key,
+	nomeTabella varchar(4000),
+	funzionalita varchar(4000),
+	pagineUtilizzo varchar(4000),
+	descrizione varchar(4000)
+)
+
+insert into ListaTabelle (nomeTabella,funzionalita,pagineUtilizzo,descrizione) values('Categorie', 'Visualizzazione e modifica', 'categorie.cfm;categorie.cfc', 'Gestione delle Categorie')
+
+create table ListaCategorie (
+	idCategoria int identity(1,1) primary key,
+	nomeCategoria varchar(4000)
+)
+
+insert into ListaCategorie (nomeCategoria) values ('Porting')
+insert into ListaCategorie (nomeCategoria) values ('Conad')
+insert into ListaCategorie (nomeCategoria) values ('GDO')
+insert into ListaCategorie (nomeCategoria) values ('Coop')
+insert into ListaCategorie (nomeCategoria) values ('GDO ES')
+
+create table Tickets (
+	idTicket int identity(1,1) primary key,
+	nomeTicket varchar(4000),
+	descrizione varchar(4000),
+	problemi varchar(4000),
+	test varchar(4000),
+	installazione varchar(4000),
+	categoria varchar(4000)
+)
+
+insert into Tickets (nomeTicket,descrizione,problemi,test,installazione,categoria) values ('Conad1','Gestisce sede 1 Conad','Nessun problema rilevato','Test eseguito','Vedere file install','Conad')
+insert into Tickets (nomeTicket,descrizione,problemi,test,installazione,categoria) values ('Coop3','Gestisce sede 3 Coop','Nessun problema rilevato','Test eseguito','Vedere file install.bat','Coop')
+insert into Tickets (nomeTicket,descrizione,problemi,test,installazione,categoria) values ('GDO','Aggiorna dati GDO','Problema in update','Test non eseguito','Vedere file install.js','GDO')
+insert into Tickets (nomeTicket,descrizione,problemi,test,installazione,categoria) values ('GD_TR','Gestisce trasporto merci','Nessun problema rilevato','Test funzionante','Vedere file install.js','GDO ES')
+insert into Tickets (nomeTicket,descrizione,problemi,test,installazione,categoria) values ('Porting32','Gestisce comunicazione interna','Nessun problema rilevato','Test funzionante','Vedere file install','Porting')
+
+SELECT * FROM ListaCategorie
+SELECT * FROM ListaTabelle
+SELECT * FROM Tickets
